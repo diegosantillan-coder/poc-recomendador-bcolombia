@@ -1,0 +1,30 @@
+<div class="o-header-ach">
+	<div class="o-header-ach__logo">
+		<a-logo [src]="'/images/ach.svg'"></a-logo>
+	</div>
+	<div class="o-header-ach__navbar-desktop">
+		<m-navbar
+			[navBar]="navBar"
+			[styleClass]="'m-navbar-secondary m-navbar-responsive-default'"
+			[separator]="noShowSeparator"
+		></m-navbar>
+		<div class="o-header-ach__separator">
+			<a-separator></a-separator>
+		</div>
+		<m-navbar
+			[navBar]="navBarHelp"
+			[styleClass]="'m-navbar-secondary m-navbar-responsive-default'"
+			[separator]="noShowSeparator"
+		></m-navbar>
+	</div>
+	<div class="o-header-ach__navbar-mobile">
+		<m-navbar
+			[navBar]="navBarMobile"
+			[styleClass]="
+				'm-navbar-secondary m-navbar__center m-navbar-responsive-default'
+			"
+			[separator]="showSeparator"
+			[styleSeparator]="'a-separator__white'"
+		></m-navbar>
+	</div>
+</div>

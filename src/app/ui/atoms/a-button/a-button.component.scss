@@ -1,0 +1,26 @@
+@import 'main';
+
+.a-button {
+	display: flex;
+	padding: 12px 24px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	font-weight: 700;
+	cursor: pointer;
+
+	&-primary {
+		background-color: $background-default;
+		color: $text-white;
+	}
+
+	&-secondary {
+		background-color: $background-info;
+		color: $text-default;
+
+		&:hover {
+			background-color: $background-default;
+			color: $text-white;
+		}
+	}
+}

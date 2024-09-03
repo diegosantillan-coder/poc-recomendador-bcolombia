@@ -1,0 +1,1 @@
+npx pretty-quick --pattern "src/**/*.*(ts|json|html|scss)" --staged  && ng lint --fix

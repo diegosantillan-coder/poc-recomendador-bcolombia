@@ -1,0 +1,9 @@
+<textarea
+	#textInput
+	rows="1"
+	placeholder="Hazme una pregunta ..."
+	class="a-custom-input-text"
+	(input)="onInputChange($event)"
+	(keydown)="onKeyDown($event)"
+	[disabled]="disableInput"
+></textarea>

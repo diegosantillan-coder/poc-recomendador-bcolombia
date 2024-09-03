@@ -1,0 +1,33 @@
+@import 'main';
+.o-header-register {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+	gap: 2.5rem;
+	align-items: center;
+	background-color: $background-info;
+	justify-content: center;
+
+	&__enterprise {
+		display: none;
+	}
+
+	&__register {
+		display: none;
+	}
+
+	@include from($laptop) {
+		&__enterprise {
+			display: block;
+		}
+		&__register {
+			display: block;
+		}
+	}
+}
+
+.o-header-register {
+	@include from($laptop) {
+		justify-content: flex-end;
+	}
+}

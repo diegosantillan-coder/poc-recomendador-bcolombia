@@ -1,0 +1,147 @@
+@import 'main';
+.t-login {
+	&__header {
+		display: grid;
+		background-color: $background-green;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		justify-items: center;
+		color: $text-white;
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 1rem;
+	}
+
+	&__image-mobile {
+		width: 100%;
+		height: auto;
+		display: block;
+		max-width: 100%; /* Asegura que la imagen no exceda el tamaño de su contenedor */
+	}
+
+	&__image-desktop {
+		display: none;
+	}
+
+	@include from($laptop) {
+		&__container {
+			grid-template-columns: 1fr 1fr;
+			justify-content: center;
+		}
+
+		&__image-mobile {
+			display: none;
+		}
+
+		&__image-desktop {
+			width: 100%;
+			height: auto;
+			display: block;
+			max-width: 100%;
+		}
+	}
+}
+
+.login-form {
+	display: grid;
+	gap: 1.2rem;
+	padding: 2rem;
+	@include from($laptop) {
+		margin: auto 0;
+		padding: 5rem;
+	}
+
+	@include from($laptop-large) {
+		padding: 10rem;
+	}
+}
+
+.login-form h2 {
+	text-align: center;
+	font-size: 4vh;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 40px;
+	color: $text-dark;
+}
+
+.form-group {
+	margin-bottom: 1.25rem;
+
+	&__text {
+		text-align: center;
+		color: $text-default;
+		font-weight: 700;
+		font-size: 16px;
+	}
+
+	&__text-white {
+		text-align: center;
+		font-weight: 400;
+		font-size: 16px;
+	}
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	color: $text-dark;
+}
+
+select,
+input {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+input::placeholder {
+	color: #aaa;
+}
+
+.password-wrapper {
+	position: relative;
+}
+
+.toggle-password {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.eye-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('/images/eye-icon.svg');
+	background-size: contain;
+}
+
+button {
+	width: 100%;
+	padding: 0.75rem;
+	background-color: $background-default;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+	background-color: #0056b3;
+}

@@ -1,0 +1,70 @@
+<div class="t-login">
+	<div class="t-login__header">
+		<a-logo [src]="'images/ach.svg'"> </a-logo>
+		<a-separator></a-separator>
+		<div>
+			<p>Personas</p>
+		</div>
+	</div>
+	<div class="t-login__container">
+		<img
+			class="t-login__image-mobile"
+			src="images/welcome-soi-mobile.svg"
+			alt="Logo"
+			loading="lazy"
+		/>
+		<img
+			class="t-login__image-desktop"
+			src="images/welcome-soi-desktop.svg"
+			alt="Logo"
+			loading="lazy"
+		/>
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+			<h2>Inicia Sesión</h2>
+
+			<div class="form-group">
+				<label for="documentType">Tipo de documento</label>
+				<select id="documentType" formControlName="documentType">
+					<option value="cc">Cédula de ciudadanía</option>
+					<option value="pass">Pasaporte</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="documentNumber">Número de documento</label>
+				<input
+					id="documentNumber"
+					formControlName="documentNumber"
+					type="text"
+					placeholder="Ej: 39123456"
+				/>
+			</div>
+
+			<div class="form-group">
+				<label for="password">Clave</label>
+				<div class="password-wrapper">
+					<input
+						id="password"
+						formControlName="password"
+						type="password"
+						placeholder="Ingresa aquí tu clave"
+					/>
+					<span
+						class="toggle-password"
+						(click)="togglePasswordVisibility()"
+						(keydown)="togglePasswordVisibility()"
+						tabindex="0"
+						><i class="eye-icon"></i
+					></span>
+				</div>
+			</div>
+			<div class="form-group__text">¿Olvidaste tu clave?</div>
+
+			<button type="submit" [disabled]="loginForm.invalid">
+				Iniciar Sesión
+			</button>
+			<div class="form-group__text-white">¿No tienes una cuenta?</div>
+			<div class="form-group__text">Registrate aquí</div>
+		</form>
+	</div>
+</div>

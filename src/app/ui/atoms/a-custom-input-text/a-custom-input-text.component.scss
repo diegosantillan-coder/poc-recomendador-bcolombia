@@ -1,0 +1,19 @@
+@import 'main';
+.a-custom-input-text {
+	display: flex;
+	padding: 16px 24px 16px 24px;
+	align-items: center;
+	width: 100%;
+	max-height: 185px;
+	flex: 1 0 0;
+	overflow: hidden;
+	overflow-y: auto;
+	border-radius: 30px;
+	border: 1px solid var(--colors-border-primary, #dcdee0);
+	background: var(--White-Light, #fff);
+	font-size: 14px;
+
+	@include from($laptop) {
+		min-width: 430px;
+	}
+}

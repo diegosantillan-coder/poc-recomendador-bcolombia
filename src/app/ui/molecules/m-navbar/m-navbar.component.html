@@ -1,0 +1,13 @@
+<div class="m-navbar__title">{{ titleNavBar | uppercase }}</div>
+<ul [ngClass]="styleClass" class="m-navbar">
+	@for (item of navBar; track i; let i = $index) {
+		<li>
+			<a href="{{ item.path }}">{{ item.title }}</a>
+		</li>
+		@if (separator && i < navBar.length - 1) {
+			<div class="m-navbar__separator">
+				<a-separator [styleClass]="styleSeparator"></a-separator>
+			</div>
+		}
+	}
+</ul>

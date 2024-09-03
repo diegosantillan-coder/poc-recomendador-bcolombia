@@ -1,0 +1,45 @@
+@import 'main';
+.o-header-ach {
+	display: flex;
+	padding: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $background-default;
+
+	&__separator {
+		margin: auto;
+		color: $text-white;
+	}
+
+	&__navbar-desktop {
+		display: none;
+	}
+
+	&__navbar-mobile {
+		display: flex;
+	}
+
+	@include from($laptop) {
+		&__navbar-desktop {
+			display: flex;
+			gap: 2rem;
+			align-items: center;
+		}
+
+		&__navbar-mobile {
+			display: none;
+		}
+
+		&__navbar {
+			display: flex;
+		}
+
+		&__logo {
+			width: 200px;
+		}
+
+		&__menu {
+			display: none;
+		}
+	}
+}

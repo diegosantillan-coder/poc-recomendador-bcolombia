@@ -1,0 +1,11 @@
+<div class="a-chat-history">
+	@for (chat of chats; track $index) {
+		<div
+			[ngClass]="{
+				'a-chat-history__user-message': chat.isUser,
+				'a-chat-history__assistant-message': !chat.isUser
+			}"
+			[innerHTML]="chat.text"
+		></div>
+	}
+</div>
