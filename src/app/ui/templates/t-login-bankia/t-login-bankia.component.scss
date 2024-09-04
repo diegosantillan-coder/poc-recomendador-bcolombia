@@ -30,6 +30,11 @@
 		display: grid;
 		gap: 3rem;
 	}
+
+	&__button {
+		min-height: 150px;
+		align-content: end;
+	}
 }
 
 label {
@@ -45,7 +50,7 @@ input {
 	padding: 0.75rem;
 	border: 1px solid #e8e8ed;
 	background: $text-white;
-	border-radius: 5px;
+	border-radius: 8px;
 	font-size: 1rem;
 }
 
@@ -75,7 +80,7 @@ input::placeholder {
 
 button {
 	width: 100%;
-	padding: 0.75rem;
+	padding: 15px 32px 15px 32px;
 	background: linear-gradient(
 		110.68deg,
 		#5452f7 1.52%,
@@ -84,7 +89,7 @@ button {
 	);
 	color: white;
 	border: none;
-	border-radius: 5px;
+	border-radius: 100px;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background 0.3s;

@@ -42,8 +42,11 @@
 					></span>
 				</div>
 			</div>
-
-			<button type="submit" [disabled]="loginForm.invalid">Continuar</button>
 		</form>
+	</div>
+	<div class="t-login-bankia__button">
+		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
+			Continuar
+		</button>
 	</div>
 </div>
