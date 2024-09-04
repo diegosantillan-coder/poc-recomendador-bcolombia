@@ -1,0 +1,105 @@
+@import 'main';
+.t-login-bankia {
+	display: grid;
+	padding: 3rem 1rem 1rem 1rem;
+	justify-content: center;
+	gap: 3rem;
+	font-family: 'Poppins', sans-serif;
+
+	&__title {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 36px;
+		color: $text-purple;
+		justify-self: center;
+	}
+
+	&__greeting {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 36px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	&__form {
+		display: grid;
+		gap: 3rem;
+	}
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+	font-size: 14px;
+	color: $text-dark;
+}
+
+input {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #e8e8ed;
+	background: $text-white;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+input::placeholder {
+	color: #aaa;
+}
+
+.password-wrapper {
+	position: relative;
+}
+
+.toggle-password {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.eye-icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url('/images/eye-icon.svg');
+	background-size: contain;
+}
+
+button {
+	width: 100%;
+	padding: 0.75rem;
+	background: linear-gradient(
+		110.68deg,
+		#5452f7 1.52%,
+		#6429cd 26.95%,
+		#b100a3 138.13%
+	);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+	background: linear-gradient(
+		110.68deg,
+		#5452f7 1.52%,
+		#6429cd 26.95%,
+		#b100a3 138.13%
+	);
+}

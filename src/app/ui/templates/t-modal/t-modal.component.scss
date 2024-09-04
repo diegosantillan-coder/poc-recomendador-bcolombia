@@ -1,200 +1,197 @@
 @import 'main';
 
 .modal-header {
-  position: absolute;
-  top: 0;
-  left: 80%;
-  z-index: 1002;
+	position: absolute;
+	top: 0;
+	left: 80%;
+	z-index: 1002;
 }
 
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
 }
 
 .modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: $background-modal;
-  display: grid;
-  overflow: hidden;
-  min-height: 830px;
-  max-height: 830px;
-  z-index: 1001;
-  max-width: 360px;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 30px;
-  width: 100%;
-  border-radius: 16px;
-  color: $text-dark;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: $background-default;
+	display: grid;
+	overflow: hidden;
+	min-height: 830px;
+	max-height: 830px;
+	z-index: 1001;
+	max-width: 360px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	width: 100%;
+	border-radius: 16px;
+	color: $text-dark;
 
-  &__close {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.5rem;
-    cursor: pointer;
-    background: transparent;
-  }
+	&__close {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0.5rem;
+		cursor: pointer;
+		background: transparent;
+	}
 
-  &__borde {
-    border-radius: inherit;
-    overflow: hidden;
+	&__borde {
+		border-radius: inherit;
+		overflow: hidden;
 
-    &-img {
-      width: 100%;
-      height: auto;
-    }
-  }
+		&-img {
+			width: 100%;
+			height: auto;
+		}
+	}
 
-  &__container-image {
-    margin: 0 auto;
-    position: inherit;
-    top: 65px;
-    left: 127px;
-    display: inline-block;
-    z-index: 0;
-    width: 100px;
-    height: auto;
-  }
+	&__container-image {
+		margin: 0 auto;
+		position: inherit;
+		top: 65px;
+		left: 127px;
+		display: inline-block;
+		z-index: 0;
+		width: 100px;
+		height: auto;
+	}
 
-  &__image {
+	&__image {
+		border-radius: 0px 0px 50% 50%;
+	}
 
-    border-radius: 0px 0px 50% 50%;
-  }
+	&__circle {
+		position: absolute;
+		top: 43%;
+		left: 50%;
+		width: 110px;
+		height: 110px;
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		z-index: -1;
 
-  &__circle {
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+		&--green-light {
+			background-color: $background-green-light;
+		}
 
-    &--green-light {
-      background-color: $background-green-light;
-    }
+		&--gray-light {
+			background-color: $background-gray-lia;
+		}
 
-    &--gray-light {
-      background-color: $background-gray-lia;
-    }
+		&--blue-light {
+			background-color: $background-blue-light;
+		}
+	}
 
-    &--blue-light {
-      background-color: $background-blue-light;
-    }
-  }
+	&__chat {
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		max-height: 427px;
+		margin-left: 1rem;
+	}
 
-  &__chat {
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    max-height: 427px;
-    margin-left: 1rem;
-  }
+	&__welcome {
+		display: grid;
+		gap: 1rem;
+	}
 
-  &__welcome {
-    display: grid;
-    gap: 1rem;
-  }
+	&__question {
+		display: grid;
+		grid-template-columns: 80% 20%;
+		gap: 0.5rem;
+		margin-left: 0.8rem;
+		margin-bottom: 1rem;
+		align-items: center;
 
-  &__question {
-    display: grid;
-    grid-template-columns: 80% 20%;
-    gap: 0.5rem;
-    margin-left: 0.8rem;
-    margin-bottom: 1rem;
-    align-items: center;
+		&-button {
+			min-width: 50px;
+			height: auto;
+			cursor: pointer;
 
-    &-button {
-      min-width: 50px;
-      height: auto;
-      cursor: pointer;
+			&--disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+				pointer-events: none;
+			}
+		}
+	}
 
-      &--disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-      }
-    }
-  }
+	@include from($laptop) {
+		top: 54%;
+		left: 83%;
+		max-width: 560px;
 
-  @include from($laptop) {
-    top: 54%;
-    left: 83%;
-    max-width: 560px;
+		&__borde {
+			&-img {
+				margin-top: -94px;
+			}
+		}
 
-    &__borde {
-      &-img {
-        margin-top: -94px;
-      }
-    }
+		&__container-image {
+			top: 58px;
+			left: 239px;
+		}
 
-    &__container-image {
-      top: 58px;
-      left: 239px;
-    }
+		&__circle {
+			width: 110px;
+			height: 110px;
+		}
 
-    &__circle {
-      width: 110px;
-      height: 110px;
-    }
+		&__welcome {
+			justify-content: center;
+		}
 
-    &__welcome {
-      justify-content: center;
-    }
+		&__greeting {
+			text-align: left;
+		}
 
-    &__greeting {
-      text-align: left;
-    }
-
-    &__question {
-      grid-template-columns: 85% 15%;
-      margin-left: 1.8rem;
-    }
-  }
+		&__question {
+			grid-template-columns: 85% 15%;
+			margin-left: 1.8rem;
+		}
+	}
 }
-
 
 button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
-
 .typing-indicator {
-  color: $text-dark;
-  font-style: italic;
-  display: grid;
-  justify-content: flex-end;
-  font-size: 14px;
-  font-weight: 400;
-  animation: blink 1s infinite;
+	color: $text-dark;
+	font-style: italic;
+	display: grid;
+	justify-content: flex-end;
+	font-size: 14px;
+	font-weight: 400;
+	animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 0;
+	}
 
-  50% {
-    opacity: 0.5;
-  }
+	50% {
+		opacity: 0.5;
+	}
 
-  100% {
-    opacity: 1;
-  }
+	100% {
+		opacity: 1;
+	}
 }

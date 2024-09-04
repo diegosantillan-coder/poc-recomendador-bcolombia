@@ -1,0 +1,44 @@
+@import 'main';
+.m-screen {
+	background: linear-gradient(
+		110.68deg,
+		#5452f7 1.52%,
+		#6429cd 26.95%,
+		#b100a3 138.13%
+	);
+	height: 100vh; /* Ajusta la altura según sea necesario */
+	width: 100%; /* Ajusta el ancho según sea necesario */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__container {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 600;
+		font-size: 60px;
+		line-height: 60px;
+		color: $text-white;
+	}
+
+	&__subtitle {
+		display: flex;
+		justify-content: center;
+		column-gap: 3px;
+	}
+
+	&__image-by {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 1rem;
+	}
+
+	&__line {
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 30%;
+		border: none;
+		border-left: 1px solid $text-white;
+	}
+}

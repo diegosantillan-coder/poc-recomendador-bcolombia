@@ -13,6 +13,13 @@ export const routes: Routes = [
 			import('./components/login/login.component').then((m) => m.LoginComponent)
 	},
 	{
+		path: 'welcome',
+		loadComponent: async () =>
+			import('./components/screen-bank/screen-bank.component').then(
+				(m) => m.ScreenBankComponent
+			)
+	},
+	{
 		path: 'home',
 		loadComponent: async () =>
 			import('./components/home/home.component').then((m) => m.HomeComponent),

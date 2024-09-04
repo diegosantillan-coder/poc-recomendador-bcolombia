@@ -1,0 +1,49 @@
+<div class="t-login-bankia">
+	<div class="t-login-bankia__title">BankIA</div>
+	<div class="t-login-bankia__container">
+		<div class="t-login-bankia__greeting">
+			Hola, nos alegra mucho que estés aquí
+		</div>
+		<div class="t-login-bankia__text">
+			Para continuar, inicia sesión con tu usuario y contraseña
+		</div>
+	</div>
+	<div>
+		<form
+			[formGroup]="loginForm"
+			(ngSubmit)="onSubmit()"
+			class="t-login-bankia__form"
+		>
+			<div class="form-group">
+				<label for="usuario">Usuario</label>
+				<input
+					id="usuario"
+					formControlName="usuario"
+					type="text"
+					placeholder="Ingresa tu usuario"
+				/>
+			</div>
+
+			<div class="form-group">
+				<label for="password">Contraseña</label>
+				<div class="password-wrapper">
+					<input
+						id="password"
+						formControlName="password"
+						type="password"
+						placeholder="Ingresa tu contraseña"
+					/>
+					<span
+						class="toggle-password"
+						(click)="togglePasswordVisibility()"
+						(keydown)="togglePasswordVisibility()"
+						tabindex="0"
+						><i class="eye-icon"></i
+					></span>
+				</div>
+			</div>
+
+			<button type="submit" [disabled]="loginForm.invalid">Continuar</button>
+		</form>
+	</div>
+</div>
