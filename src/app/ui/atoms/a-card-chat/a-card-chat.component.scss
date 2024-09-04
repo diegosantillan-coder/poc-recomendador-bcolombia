@@ -20,6 +20,9 @@
     font-weight: 400;
     align-self: flex-end;
     text-align: left;
+    display: grid;
+    grid-template-columns: 100% 0%;
+    align-items: center;
 
     a {
       color: blue;
@@ -28,6 +31,17 @@
 
     a:hover {
       color: darkblue;
+    }
+
+    &::after {
+      content: '';
+      position: relative;
+      left: 13px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-left-color: $background-chat-user;
+      border-right: 0;
     }
   }
 
