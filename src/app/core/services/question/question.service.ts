@@ -23,17 +23,17 @@ export class QuestionService {
 			{
 				user_id: this.user.documentNumber,
 				session_id: this.user.sessionId,
-				prompt: 'Quiero modificar mi planilla como independiente'
+				prompt: 'Quiero mi diagnóstico financiero'
 			},
 			{
 				user_id: this.user.documentNumber,
 				session_id: this.user.sessionId,
-				prompt: 'Quiero reportar una novedad cómo independiente'
+				prompt: 'Quiero controlar mejor mis gastos'
 			},
 			{
 				user_id: this.user.documentNumber,
 				session_id: this.user.sessionId,
-				prompt: 'Quiero pagar mis aportes vencidos cómo independiente'
+				prompt: 'Quiero aprender hábitos de ahorro'
 			}
 		];
 	}

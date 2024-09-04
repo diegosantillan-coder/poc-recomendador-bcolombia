@@ -1,22 +1,24 @@
 @import 'main';
-.a-custom-button {
-	display: flex;
-	width: 300px;
-	padding: 10px 22px;
-	gap: 10px;
-	border-radius: 16px;
-	font-size: 14px;
-	border: 1px solid var(--colors-border-primary, #dcdee0);
-	background: var(--colors-white, #fff);
-	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-	cursor: pointer;
 
-	@include from($laptop) {
-		display: flex;
-		width: 452px;
-		padding: 12px 24px;
-		align-items: center;
-		border-radius: 16px;
-		font-size: 16px;
-	}
+.a-custom-button {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+  width: 300px;
+  padding: 10px 22px 10px 0px;
+  gap: 10px;
+  border-radius: 16px;
+  font-size: 14px;
+  border: 1px solid var(--colors-border-primary, #dcdee0);
+  background: var(--colors-white, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  @include from($laptop) {
+    width: 452px;
+    padding: 12px 24px 12px 0px;
+    align-items: center;
+    border-radius: 16px;
+    font-size: 16px;
+  }
 }
