@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { THomeBankiaComponent } from './t-home-bankia/t-home-bankia.component';
 import { THomeComponent } from './t-home/t-home.component';
 import { TLoginBankiaComponent } from './t-login-bankia/t-login-bankia.component';
-import { TLoginComponent } from './t-login/t-login.component';
 
 @NgModule({
 	declarations: [],
 	imports: [
 		CommonModule,
 		THomeComponent,
-		TLoginComponent,
-		TLoginBankiaComponent
+		TLoginBankiaComponent,
+		THomeBankiaComponent
 	],
-	exports: [THomeComponent, TLoginComponent, TLoginBankiaComponent]
+	exports: [THomeComponent, TLoginBankiaComponent, THomeBankiaComponent]
 })
 export class TemplatesModule {}
