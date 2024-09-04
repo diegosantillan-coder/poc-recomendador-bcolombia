@@ -1,40 +1,10 @@
 @import 'main';
 .footer {
 	display: grid;
-	background-color: $background-default;
+	grid-template-columns: repeat(5, 1fr);
+	background-color: $background-white;
 	gap: 2rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	justify-items: center;
-
-	&__container {
-		display: grid;
-		gap: 3rem;
-		grid-template-columns: 1fr;
-		padding-top: 1rem;
-		padding-left: 1.5rem;
-	}
-
-	&__hr {
-		width: 80%;
-		margin: auto;
-	}
-
-	&__copyright {
-		color: $text-white;
-		text-align: center;
-		line-height: 24px;
-		padding: 1.5rem;
-	}
-
-	@include from($laptop) {
-		&__container {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 2rem;
-		}
-
-		&__hr {
-			width: 95%;
-		}
-	}
 }
