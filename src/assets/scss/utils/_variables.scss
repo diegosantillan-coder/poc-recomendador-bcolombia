@@ -6,6 +6,7 @@ $background-green-light: hsla(86, 54%, 76%, 1);
 $background-info: #e6eefe;
 $background-white: #ffffff;
 $background-gray: #f4f4f4;
+$background-gray-lia: #D9D9D9;
 $background-chat-user: #dfdfdf;
 $text-dark: #0d1a26;
 $text-white: #ffffff;
@@ -14,7 +15,10 @@ $text-default: #054b85;
 /* Breakpoints */
 $mobile-small: 320px;
 $mobile-medium: 375px;
-$mobile-large: 425px; /*-------- Mobile devices*/
-$tablet: 768px; /*-------- Tablet devices*/
-$laptop: 1024px; /*-------- Desktop devices*/
+$mobile-large: 425px;
+/*-------- Mobile devices*/
+$tablet: 768px;
+/*-------- Tablet devices*/
+$laptop: 1024px;
+/*-------- Desktop devices*/
 $laptop-large: 1440px;

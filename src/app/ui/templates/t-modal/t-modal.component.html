@@ -10,31 +10,31 @@
 	<div class="modal-content__borde">
 		<img
 			class="modal-content__borde-img"
-			src="/images/borde.svg"
+			src="/images/background-lia.svg"
 			alt=""
 			loading="lazy"
 		/>
 	</div>
-	<div class="modal-content__image">
-		<div class="modal-content__circle modal-content__circle--green-light"></div>
+	<div class="modal-content__container-image">
+		<div class="modal-content__circle modal-content__circle--gray-light"></div>
 		<img
-			class="modal-content__default"
-			src="/images/amelia.svg"
+			class="modal-content__image"
+			src="/images/lia.svg"
 			alt=""
 			loading="lazy"
 		/>
 	</div>
 	<button class="modal-content__close" type="button" (click)="handleClose()">
-		<img src="/images/close.svg" alt="" />
+		<img src="/images/close-white.svg" width="25" height="25" alt="" />
 	</button>
 	<div class="modal-content__chat" #chatContainer>
 		@if (welcome) {
 			<div class="modal-content__welcome">
 				<div class="modal-content__greeting">
-					Hola! Soy Amelia,<br />
-					tu asistente virtual IA
+					Hola! Soy LIA,<br />
+					tu asesora de productos IA
+          <p>¿cómo puedo ayudarte hoy?</p>
 				</div>
-				<p>¿Cómo puedo ayudarte?</p>
 				@for (question of defaultQuestion; track $index) {
 					<a-custom-button
 						[text]="question.prompt"
