@@ -22,7 +22,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: $background-gray;
+  background: $background-modal;
   display: grid;
   overflow: hidden;
   min-height: 830px;
@@ -59,7 +59,7 @@
     margin: 0 auto;
     position: inherit;
     top: 65px;
-    left: 111px;
+    left: 127px;
     display: inline-block;
     z-index: 0;
     width: 100px;
@@ -111,7 +111,7 @@
     display: grid;
     grid-template-columns: 80% 20%;
     gap: 0.5rem;
-    margin-left: 0.5rem;
+    margin-left: 0.8rem;
     margin-bottom: 1rem;
     align-items: center;
 
@@ -122,11 +122,8 @@
 
       &--disabled {
         opacity: 0.5;
-        /* Reduce la opacidad para que parezca deshabilitado */
         cursor: not-allowed;
-        /* Cambia el cursor para indicar que no se puede hacer clic */
         pointer-events: none;
-        /* Desactiva la capacidad de hacer clic */
       }
     }
   }
@@ -161,7 +158,8 @@
     }
 
     &__question {
-      grid-template-columns: 80% 20%;
+      grid-template-columns: 85% 15%;
+      margin-left: 1.8rem;
     }
   }
 }
