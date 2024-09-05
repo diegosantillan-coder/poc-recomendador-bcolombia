@@ -44,6 +44,7 @@ export class TOnboardingComponent {
 
 	setOnboarding() {
 		this.onboardingService.setOnboarding(true);
+		localStorage.setItem('onboarding', 'true');
 	}
 
 	showModal = false;

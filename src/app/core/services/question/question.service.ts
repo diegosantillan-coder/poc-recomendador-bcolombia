@@ -12,6 +12,7 @@ export class QuestionService {
 	}
 
 	getDefaultQuestions(): Request[] {
+		this.user.set(this.userService.getUser());
 		return [
 			{
 				user_id: this.user()?.usuario || '',

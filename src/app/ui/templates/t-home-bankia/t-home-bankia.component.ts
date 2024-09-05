@@ -61,8 +61,6 @@ export class THomeBankiaComponent {
 	}
 
 	goOnboarding(): void {
-		console.log(this.onboardingService.getOnboarding()());
-
 		if (this.onboardingService.getOnboarding()()) {
 			this.openModal();
 		} else {

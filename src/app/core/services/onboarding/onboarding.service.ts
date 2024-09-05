@@ -7,6 +7,9 @@ export class OnboardingService {
 	showOnboarding = signal(false);
 
 	getOnboarding() {
+		if (localStorage.getItem('onboarding') === 'true') {
+			this.setOnboarding(true);
+		}
 		return this.showOnboarding;
 	}
 

@@ -33,7 +33,7 @@
 				<div class="modal-content__greeting">
 					Hola! Soy LIA,<br />
 					tu asesora de productos IA
-          <p>¿cómo puedo ayudarte hoy?</p>
+					<p>¿cómo puedo ayudarte hoy?</p>
 				</div>
 				@for (question of defaultQuestion; track $index) {
 					<a-custom-button
@@ -44,7 +44,7 @@
 			</div>
 		} @else {
 			<div class="modal-content__chat-ia">
-				<a-card-welcome></a-card-welcome>
+				<a-card-welcome class="modal-content__welcome"></a-card-welcome>
 				<a-card-chat [chats]="chats"></a-card-chat>
 				@if (isTyping) {
 					<div class="typing-indicator">
