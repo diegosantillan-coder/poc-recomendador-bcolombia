@@ -13,6 +13,8 @@ export class AuthGuard implements CanActivate {
 	}
 
 	canActivate(): boolean {
+		console.log('AuthGuard#canActivate called');
+
 		if (this.sessionId) {
 			return true;
 		} else {

@@ -16,5 +16,6 @@ export class HeaderComponent {
 	exit() {
 		this.router.navigate(['/login']);
 		localStorage.removeItem('user');
+		localStorage.removeItem('onboarding');
 	}
 }

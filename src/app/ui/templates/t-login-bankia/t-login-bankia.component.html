@@ -11,11 +11,7 @@
 		></m-card-info>
 	</div>
 	<div>
-		<form
-			[formGroup]="loginForm"
-			(ngSubmit)="onSubmit()"
-			class="t-login-bankia__form"
-		>
+		<form [formGroup]="loginForm" class="t-login-bankia__form">
 			<div class="form-group">
 				<label for="usuario">Usuario</label>
 				<input
@@ -47,7 +43,12 @@
 		</form>
 	</div>
 	<div class="t-login-bankia__button">
-		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
+		<button
+			type="button"
+			[disabled]="loginForm.invalid"
+			(click)="onSubmit()"
+			(keydown.enter)="onSubmit()"
+		>
 			Continuar
 		</button>
 	</div>
