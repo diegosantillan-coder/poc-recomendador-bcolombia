@@ -5,17 +5,23 @@
 	height: 90vh;
 	gap: 1rem;
 
+	&__close {
+		cursor: pointer;
+	}
+
 	&__image {
 		margin: auto;
 	}
+
 	&__header {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 		align-items: center;
 
-		&-logo {
+		&-next {
 			justify-self: end;
+			cursor: pointer;
 		}
 	}
 }

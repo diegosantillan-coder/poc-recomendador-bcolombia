@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { OrganismsModule } from '@ui/organisms/organisms.module';
 import { AtomsModule } from '../../ui/atoms/atoms.module';
 
@@ -9,4 +10,10 @@ import { AtomsModule } from '../../ui/atoms/atoms.module';
 	templateUrl: './header.component.html',
 	styleUrl: './header.component.scss'
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+	private readonly router = inject(Router);
+
+	exit() {
+		this.router.navigate(['/login']);
+	}
+}

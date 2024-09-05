@@ -67,7 +67,6 @@ export class THomeBankiaComponent {
 			this.openModal();
 		} else {
 			this.router.navigate(['/onboarding/step-1']);
-			this.onboardingService.setOnboarding(true);
 		}
 	}
 

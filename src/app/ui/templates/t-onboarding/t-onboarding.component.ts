@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '@core/services/modal/modal.service';
+import { OnboardingService } from '@core/services/onboarding/onboarding.service';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '@ui/molecules/molecules.module';
 import { TModalComponent } from '../t-modal/t-modal.component';
@@ -15,6 +16,7 @@ import { TModalComponent } from '../t-modal/t-modal.component';
 export class TOnboardingComponent {
 	private readonly router = inject(Router);
 	private readonly isVisibleService = inject(ModalService);
+	private readonly onboardingService = inject(OnboardingService);
 
 	@Input() pathImage = '';
 	@Input() title = '';
@@ -24,8 +26,9 @@ export class TOnboardingComponent {
 	goNextStep() {
 		if (this.page !== 'step-4') {
 			this.router.navigate(['onboarding/' + this.page]);
-		} else {
+		} else if (this.page === 'step-4') {
 			this.setModalStatus();
+			this.setOnboarding();
 			this.goHome();
 			this.openModal();
 		}
@@ -37,6 +40,10 @@ export class TOnboardingComponent {
 
 	setModalStatus() {
 		this.isVisibleService.setModalStatus(true);
+	}
+
+	setOnboarding() {
+		this.onboardingService.setOnboarding(true);
 	}
 
 	showModal = false;

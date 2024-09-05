@@ -35,6 +35,10 @@ label {
 	font-weight: 400;
 	font-size: 14px;
 	color: $text-dark;
+
+	@include from($laptop) {
+		font-size: 16px;
+	}
 }
 
 input {
@@ -72,6 +76,9 @@ input::placeholder {
 
 button {
 	transition: background 0.3s;
+	@include from($laptop) {
+		font-size: 18px;
+	}
 }
 
 button:disabled {

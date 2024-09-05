@@ -5,7 +5,7 @@
 	<div>
 		<a-title-bankia [text]="'BankIA'"></a-title-bankia>
 	</div>
-	<div class="header__logo">
+	<div class="header__logo" (click)="exit()" (keydown)="exit()" tabindex="0">
 		<a-logo [src]="'icons/salir.svg'"></a-logo>
 	</div>
 </header>

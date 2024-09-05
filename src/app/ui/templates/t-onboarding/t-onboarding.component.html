@@ -3,14 +3,19 @@
 }
 <div class="t-onboarding">
 	<header class="t-onboarding__header">
-		<div (click)="goHome()" (keydown)="goHome()" tabindex="0">
+		<div
+			class="t-onboarding__close"
+			(click)="goHome()"
+			(keydown)="goHome()"
+			tabindex="0"
+		>
 			<a-logo [src]="'images/close.svg'"></a-logo>
 		</div>
 		<div>
 			<a-title-bankia [text]="'BankIA'"></a-title-bankia>
 		</div>
 		<div
-			class="t-onboarding__header-logo"
+			class="t-onboarding__header-next"
 			(click)="goNextStep()"
 			(keydown)="goNextStep()"
 			tabindex="0"

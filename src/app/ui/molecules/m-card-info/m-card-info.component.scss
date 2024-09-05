@@ -1,7 +1,8 @@
+@import 'main';
 .m-card-info {
 	&__greeting {
 		font-weight: 700;
-		font-size: 24px;
+		font-size: 23px;
 		line-height: 36px;
 	}
 
@@ -9,5 +10,15 @@
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 24px;
+	}
+
+	@include from($laptop) {
+		&__greeting {
+			font-size: 26px;
+		}
+
+		&__text {
+			font-size: 18px;
+		}
 	}
 }
