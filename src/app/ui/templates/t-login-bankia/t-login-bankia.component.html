@@ -43,12 +43,7 @@
 		</form>
 	</div>
 	<div class="t-login-bankia__button">
-		<button
-			type="button"
-			[disabled]="loginForm.invalid"
-			(click)="onSubmit()"
-			(keydown.enter)="onSubmit()"
-		>
+		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
 			Continuar
 		</button>
 	</div>

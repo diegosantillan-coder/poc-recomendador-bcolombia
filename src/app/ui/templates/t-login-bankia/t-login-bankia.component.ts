@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import {
 	FormBuilder,
 	FormGroup,
@@ -22,6 +22,15 @@ import { MoleculesModule } from '../../molecules/molecules.module';
 export class TLoginBankiaComponent implements OnInit {
 	loginForm!: FormGroup;
 	sessionId = '';
+	@HostListener('document:keydown.enter', ['$event'])
+	handleEnter(event: KeyboardEvent) {
+		console.log(event);
+
+		if (this.loginForm.valid) {
+			this.onSubmit();
+		}
+	}
+
 	constructor(
 		private fb: FormBuilder,
 		private router: Router,

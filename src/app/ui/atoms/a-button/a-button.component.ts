@@ -1,5 +1,11 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+	Component,
+	EventEmitter,
+	HostListener,
+	Input,
+	Output
+} from '@angular/core';
 
 @Component({
 	selector: 'a-button',
@@ -12,6 +18,12 @@ export class AButtonComponent {
 	@Input() styleClass = 'a-button-primary';
 	@Input() text = '';
 	@Output() buttonClick = new EventEmitter<void>();
+
+	@HostListener('document:keydown.enter', ['$event'])
+	handleEnter(event: KeyboardEvent) {
+		console.log(event);
+		this.handleClick();
+	}
 
 	handleClick(): void {
 		this.buttonClick.emit();
