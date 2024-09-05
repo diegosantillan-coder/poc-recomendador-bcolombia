@@ -13,7 +13,8 @@ export class AuthGuard implements CanActivate {
 	}
 
 	canActivate(): boolean {
-		console.log('AuthGuard#canActivate called');
+		const user: User = JSON.parse(localStorage.getItem('user') || '{}');
+		this.sessionId = user.sessionId;
 
 		if (this.sessionId) {
 			return true;

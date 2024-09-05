@@ -15,8 +15,20 @@
 			loading="lazy"
 		/>
 	</div>
-	<div class="modal-content__container-image">
-		<div class="modal-content__circle modal-content__circle--gray-light"></div>
+	<div
+		[ngClass]="{
+			'modal-content__container-image--default': welcome,
+			'modal-content__container-image--top': !welcome
+		}"
+		class="modal-content__container-image"
+	>
+		<div
+			[ngClass]="{
+				'modal-content__circle--default': welcome,
+				'modal-content__circle--top': !welcome
+			}"
+			class="modal-content__circle modal-content__circle--gray-light"
+		></div>
 		<img
 			class="modal-content__image"
 			src="/images/lia.svg"

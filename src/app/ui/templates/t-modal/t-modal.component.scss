@@ -41,6 +41,7 @@
 		top: 0;
 		left: 0;
 		padding: 0.5rem;
+		margin-top: 1rem;
 		cursor: pointer;
 		background: transparent;
 	}
@@ -58,12 +59,22 @@
 	&__container-image {
 		margin: 0 auto;
 		position: inherit;
-		top: 65px;
-		left: 127px;
 		display: inline-block;
 		z-index: 0;
 		width: 100px;
 		height: auto;
+
+		&--default {
+			width: 100px;
+			top: 65px;
+			left: 110px;
+		}
+
+		&--top {
+			width: 70px;
+			top: 36px;
+			left: 120px;
+		}
 	}
 
 	&__image {
@@ -74,11 +85,19 @@
 		position: absolute;
 		top: 43%;
 		left: 50%;
-		width: 110px;
-		height: 110px;
 		border-radius: 50%;
 		transform: translate(-50%, -50%);
 		z-index: -1;
+
+		&--default {
+			width: 110px;
+			height: 110px;
+		}
+
+		&--top {
+			width: 75px;
+			height: 75px;
+		}
 
 		&--green-light {
 			background-color: $background-green-light;
@@ -140,11 +159,11 @@
 
 		&__container-image {
 			top: 58px;
-			left: 239px;
+			left: 232px;
 		}
 
 		&__welcome {
-			justify-content: center;
+			justify-content: start;
 		}
 
 		&__greeting {

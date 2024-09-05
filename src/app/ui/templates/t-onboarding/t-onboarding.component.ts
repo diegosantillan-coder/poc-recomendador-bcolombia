@@ -26,8 +26,9 @@ export class TOnboardingComponent {
 	goNextStep() {
 		if (this.page !== 'step-4') {
 			this.router.navigate(['onboarding/' + this.page]);
+			this.setModalStatus(false);
 		} else if (this.page === 'step-4') {
-			this.setModalStatus();
+			this.setModalStatus(true);
 			this.setOnboarding();
 			this.goHome();
 			this.openModal();
@@ -38,8 +39,8 @@ export class TOnboardingComponent {
 		this.router.navigate(['home']);
 	}
 
-	setModalStatus() {
-		this.isVisibleService.setModalStatus(true);
+	setModalStatus(status: boolean) {
+		this.isVisibleService.setModalStatus(status);
 	}
 
 	setOnboarding() {

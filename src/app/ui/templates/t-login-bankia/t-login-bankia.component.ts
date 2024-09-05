@@ -27,7 +27,10 @@ export class TLoginBankiaComponent implements OnInit {
 		private router: Router,
 		private sessionService: SessionService,
 		private questionService: QuestionService
-	) {}
+	) {
+		localStorage.removeItem('user');
+		localStorage.removeItem('onboarding');
+	}
 
 	ngOnInit(): void {
 		this.loginForm = this.fb.group({
