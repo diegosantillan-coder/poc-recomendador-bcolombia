@@ -20,7 +20,12 @@ export class TOnboardingComponent {
 	@Input() page = '';
 
 	goNextStep() {
-		this.router.navigate(['onboarding/' + this.page]);
+		if (this.page !== 'step-4') {
+			this.router.navigate(['onboarding/' + this.page]);
+		} else {
+			this.goHome();
+			this.openModal();
+		}
 	}
 
 	goHome() {
@@ -37,7 +42,7 @@ export class TOnboardingComponent {
 
 	closeModal(): void {
 		console.log('closeModal');
-
+		this.goHome();
 		this.showModal = false;
 	}
 }

@@ -4,6 +4,10 @@
 	display: grid;
 	height: 90vh;
 	gap: 1rem;
+
+	&__image {
+		margin: auto;
+	}
 	&__header {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
