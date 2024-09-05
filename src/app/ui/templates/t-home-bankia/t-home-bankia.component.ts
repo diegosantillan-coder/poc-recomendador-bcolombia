@@ -1,6 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavBar } from '@core/interfaces/navbar.interface';
+import { OnboardingService } from '@core/services/onboarding/onboarding.service';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '@ui/molecules/molecules.module';
 import { TModalComponent } from '../t-modal/t-modal.component';
@@ -14,6 +15,7 @@ import { TModalComponent } from '../t-modal/t-modal.component';
 })
 export class THomeBankiaComponent {
 	private readonly router = inject(Router);
+	private readonly onboardingService = inject(OnboardingService);
 	@Input() showModal = false;
 
 	transactions: NavBar[] = [
@@ -59,7 +61,14 @@ export class THomeBankiaComponent {
 	}
 
 	goOnboarding(): void {
-		this.router.navigate(['/onboarding/step-1']);
+		console.log(this.onboardingService.getOnboarding()());
+
+		if (this.onboardingService.getOnboarding()()) {
+			this.openModal();
+		} else {
+			this.router.navigate(['/onboarding/step-1']);
+			this.onboardingService.setOnboarding(true);
+		}
 	}
 
 	closeModal(): void {
