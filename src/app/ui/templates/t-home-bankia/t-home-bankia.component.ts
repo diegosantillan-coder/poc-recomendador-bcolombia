@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavBar } from '@core/interfaces/navbar.interface';
 import { AtomsModule } from '@ui/atoms/atoms.module';
@@ -14,6 +14,7 @@ import { TModalComponent } from '../t-modal/t-modal.component';
 })
 export class THomeBankiaComponent {
 	private readonly router = inject(Router);
+	@Input() showModal = false;
 
 	transactions: NavBar[] = [
 		{
@@ -50,8 +51,6 @@ export class THomeBankiaComponent {
 			path: '/icons/mensaje.svg'
 		}
 	];
-
-	showModal = false;
 
 	openModal(): void {
 		console.log('openModal');
