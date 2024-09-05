@@ -1,0 +1,24 @@
+@import 'main';
+.home {
+	display: grid;
+	padding: 1.5rem;
+	gap: 2rem;
+	height: 90vh;
+	grid-template-rows: 10% 75% 15%;
+
+	&__footer {
+		padding: 1.5rem;
+		background-color: $background-white;
+	}
+
+	@include from($laptop) {
+		max-width: 50%;
+		margin: auto;
+		height: 91vh;
+
+		&__footer {
+			max-width: 50%;
+			margin: auto;
+		}
+	}
+}
