@@ -11,10 +11,9 @@
 		max-width: 50%;
 		margin: auto;
 		height: 91vh;
+	}
 
-		&__footer {
-			max-width: 50%;
-			margin: auto;
-		}
+	@include from($laptop-large) {
+		max-width: 35%;
 	}
 }

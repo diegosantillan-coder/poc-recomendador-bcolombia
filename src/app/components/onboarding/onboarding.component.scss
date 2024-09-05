@@ -1,10 +1,10 @@
 @import 'main';
 .onboarding {
 	height: 100vh;
-	padding: 1.5rem;
+	max-width: 100%;
 
 	@include from($laptop) {
-		max-width: 50%;
+		max-width: 70%;
 		margin: auto;
 	}
 }

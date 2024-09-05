@@ -6,4 +6,9 @@
 	gap: 2rem;
 	justify-items: center;
 	border-radius: 5px;
+
+	@include from($laptop) {
+		max-width: 35%;
+		margin: auto;
+	}
 }
