@@ -1,5 +1,5 @@
 export interface UserBankia {
-	documentNumber: string;
+	usuario: string;
 	password: string;
 	sessionId: string;
 }

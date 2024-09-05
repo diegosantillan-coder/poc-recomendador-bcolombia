@@ -5,11 +5,13 @@ import {
 	ElementRef,
 	EventEmitter,
 	inject,
+	OnDestroy,
+	OnInit,
 	Output,
 	ViewChild
 } from '@angular/core';
 import { QuestionRequest, Request } from '@core/interfaces/question.interface';
-import { User } from '@core/interfaces/user.interface';
+import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { AgentService } from '@core/services/agent/agent.service';
 import { QuestionService } from '@core/services/question/question.service';
 import { TextService } from '@core/services/text/text.service';
@@ -25,11 +27,23 @@ import { ACardChatComponent } from '../../atoms/a-card-chat/a-card-chat.componen
 	templateUrl: './t-modal.component.html',
 	styleUrl: './t-modal.component.scss'
 })
-export class TModalComponent implements AfterViewInit {
+export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	private readonly agentService = inject(AgentService);
 	private readonly userService = inject(UserService);
 	private readonly questionService = inject(QuestionService);
 	private readonly formatTextService = inject(TextService);
+
+	user: UserBankia = this.userService.getUser();
+
+	ngOnDestroy(): void {
+		this.questionService.setUser({ usuario: '', sessionId: '', password: '' });
+	}
+
+	ngOnInit(): void {
+		this.defaultQuestion = this.questionService.getDefaultQuestions();
+		console.log(this.defaultQuestion);
+		console.log('onInit modal');
+	}
 
 	chats: { text: string; isUser: boolean }[] = [];
 
@@ -38,8 +52,7 @@ export class TModalComponent implements AfterViewInit {
 	isDisableInput = false;
 	isTyping = false; // Bandera para indicar si está "escribiendo"
 	welcome = true;
-	defaultQuestion: Request[] = this.questionService.getDefaultQuestions();
-	user: User = this.userService.getUser();
+	defaultQuestion: Request[] = [];
 
 	@ViewChild('chatContainer') chatContainer!: ElementRef;
 	@Output() onclose = new EventEmitter<void>();
@@ -60,7 +73,7 @@ export class TModalComponent implements AfterViewInit {
 		if (this.valueInput) {
 			this.askingTheAgent({
 				request: {
-					user_id: this.user.documentNumber,
+					user_id: this.user.usuario,
 					session_id: this.user.sessionId,
 					prompt: this.valueInput
 				}
@@ -98,7 +111,7 @@ export class TModalComponent implements AfterViewInit {
 			});
 			this.askingTheAgent({
 				request: {
-					user_id: this.user.documentNumber,
+					user_id: this.user.usuario,
 					session_id: this.user.sessionId,
 					prompt: this.valueInput
 				}
@@ -110,7 +123,6 @@ export class TModalComponent implements AfterViewInit {
 
 	ngAfterViewInit(): void {
 		this.scrollToBottom();
-		console.log(this.defaultQuestion);
 	}
 
 	private scrollToBottom(): void {
@@ -131,40 +143,28 @@ export class TModalComponent implements AfterViewInit {
 		this.isTyping = true;
 
 		try {
-			// Llama al método asincrónico y espera la respuesta
 			const response = await this.agentService.getResponseAgentAsync(request);
 			const answer = this.formatTextService.formatText(response.agent_answer);
 			const answerLinkFormat = this.formatTextService.generateLinkHtml(answer);
-
-			// Si hay respuesta del agente, se añade a la lista de chats
 			if (response.agent_answer) {
 				this.chats.push({
 					text: answerLinkFormat,
 					isUser: false
 				});
 			}
-
-			// Reactivar el input y cambiar el estado de "escribiendo"
 			this.isDisableInput = false;
 			this.isTyping = false;
-
-			// Enfocar el input de texto y hacer scroll al fondo del chat
 			this.tryFocusInput();
 			setTimeout(() => this.scrollToBottom(), 0);
 		} catch (error) {
 			console.error('Error al obtener la respuesta del agente:', error);
 
-			// Asegura que el input se vuelva a habilitar en caso de error
 			this.isDisableInput = false;
 			this.isTyping = false;
-
-			// Mostrar un mensaje de error en el chat
 			this.chats.push({
 				text: 'Hubo un error al procesar la solicitud. Inténtalo de nuevo.',
 				isUser: false
 			});
-
-			// Enfocar el input de texto y hacer scroll al fondo del chat
 			this.tryFocusInput();
 			setTimeout(() => this.scrollToBottom(), 0);
 		}
@@ -172,11 +172,9 @@ export class TModalComponent implements AfterViewInit {
 
 	tryFocusInput(): void {
 		if (!this.inputText.disableInput) {
-			// Asegúrate de resetear la altura antes de enfocar
 			this.inputText.resetHeight();
 			this.inputText.focusInput();
 		} else {
-			// Evitar recursión continua con un límite de intentos
 			let attempts = 0;
 			const maxAttempts = 5;
 

@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
+import { QuestionService } from '@core/services/question/question.service';
 import { SessionService } from '@core/services/session/session.service';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '../../molecules/molecules.module';
@@ -24,7 +25,8 @@ export class TLoginBankiaComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private router: Router,
-		private sessionService: SessionService
+		private sessionService: SessionService,
+		private questionService: QuestionService
 	) {}
 
 	ngOnInit(): void {
@@ -44,6 +46,7 @@ export class TLoginBankiaComponent implements OnInit {
 			const user: UserBankia = this.loginForm.value;
 			user.sessionId = this.sessionId;
 			localStorage.setItem('user', JSON.stringify(user));
+			this.questionService.setUser(user);
 			console.log('User logged in', user);
 			this.router.navigate(['/home']);
 		}

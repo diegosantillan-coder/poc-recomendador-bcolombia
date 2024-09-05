@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { User } from '@core/interfaces/user.interface';
+import { UserBankia } from '@core/interfaces/user-bankia.interface';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class UserService {
-	getUser(): User {
+	getUser(): UserBankia {
 		const user = localStorage.getItem('user');
 		return user ? JSON.parse(user) : null;
 	}
