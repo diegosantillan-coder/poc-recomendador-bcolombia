@@ -6,11 +6,30 @@
 		<div class="t-home-bankia__credit-card">
 			<a-logo [src]="'images/credit-card.svg'"></a-logo>
 		</div>
-		<div>
-			<m-card-shortcut></m-card-shortcut>
+		<div class="t-home-bankia__operations">
+			<m-card-shortcut
+				[options]="transactions"
+				[subTitle]="'Realiza transacciones'"
+			></m-card-shortcut>
+			<m-card-shortcut
+				[options]="formalities"
+				[subTitle]="'Realiza trámites'"
+			></m-card-shortcut>
 		</div>
-		<!-- <div class="t-home-bankia__continuar">
-			<button (click)="openModal()">Click aqui</button>
-		</div> -->
+
+		<div
+			class="t-home-bankia__container-image"
+			(click)="openModal()"
+			(keyup)="openModal()"
+			tabindex="0"
+		>
+			<div class="t-home-bankia__circle t-home-bankia__circle--purple"></div>
+			<img
+				class="t-home-bankia__image"
+				src="/images/lia.svg"
+				alt=""
+				loading="lazy"
+			/>
+		</div>
 	</div>
 </div>

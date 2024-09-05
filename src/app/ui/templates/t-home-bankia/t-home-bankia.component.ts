@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavBar } from '@core/interfaces/navbar.interface';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '@ui/molecules/molecules.module';
 import { TModalComponent } from '../t-modal/t-modal.component';
@@ -11,6 +12,42 @@ import { TModalComponent } from '../t-modal/t-modal.component';
 	styleUrl: './t-home-bankia.component.scss'
 })
 export class THomeBankiaComponent {
+	transactions: NavBar[] = [
+		{
+			id: 1,
+			title: 'Enviar dinero',
+			path: '/icons/avion.svg'
+		},
+		{
+			id: 2,
+			title: 'Pagar tarjetas',
+			path: '/icons/tarjeta.svg'
+		},
+		{
+			id: 3,
+			title: 'Pagar crédito',
+			path: '/icons/dolar.svg'
+		}
+	];
+
+	formalities: NavBar[] = [
+		{
+			id: 1,
+			title: 'Enviar dinero',
+			path: '/icons/avion.svg'
+		},
+		{
+			id: 2,
+			title: 'Pagar tarjetas',
+			path: '/icons/tarjeta.svg'
+		},
+		{
+			id: 3,
+			title: 'Pagar crédito',
+			path: '/icons/dolar.svg'
+		}
+	];
+
 	showModal = false;
 
 	openModal(): void {
