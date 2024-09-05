@@ -1,0 +1,11 @@
+<div class="m-card-shortcut">
+	<div class="m-card-shortcut__title">Realizar transacciones</div>
+	<div class="m-card-shortcut__container">
+		@for (transaction of transactions; track $index) {
+			<a-card-shortcut
+				[pathIcon]="transaction.path"
+				[text]="transaction.title"
+			></a-card-shortcut>
+		}
+	</div>
+</div>

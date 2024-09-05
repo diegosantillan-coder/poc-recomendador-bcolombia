@@ -1,0 +1,39 @@
+@import 'main';
+.a-card-shortcut {
+	display: grid;
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+	border: 1px solid $border-gray;
+	background-color: $background-white;
+	font-family: 'Poppins', sans-serif;
+	justify-items: center;
+	padding: 1rem;
+
+	&__image {
+		width: 25px;
+		height: 25px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+	}
+
+	@include from($tablet) {
+		width: 120px;
+		height: 120px;
+
+		&__image {
+			width: auto;
+			height: auto;
+		}
+
+		&__text {
+			font-weight: 400;
+			font-size: 16px;
+		}
+	}
+}

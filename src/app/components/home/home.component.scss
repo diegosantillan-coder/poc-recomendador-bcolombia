@@ -1,11 +1,7 @@
 @import 'main';
 .home {
-	display: grid;
-	padding: 1.5rem;
-	gap: 2rem;
 	height: 90vh;
-	grid-template-rows: 10% 75% 15%;
-
+	padding: 1.5rem;
 	&__footer {
 		padding: 1.5rem;
 		background-color: $background-white;

@@ -1,2 +1,21 @@
+@import 'main';
+
 .t-home-bankia {
+	&__container {
+		display: grid;
+		gap: 2rem;
+		padding-top: 2rem;
+	}
+
+	&__credit-card {
+		width: 200px;
+		height: 200px;
+	}
+
+	@include from($laptop) {
+		&__credit-card {
+			width: auto;
+			height: auto;
+		}
+	}
 }

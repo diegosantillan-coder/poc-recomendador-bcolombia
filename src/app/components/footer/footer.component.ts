@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { NavBar } from '@core/interfaces/navbar.interface';
 import { AtomsModule } from '@ui/atoms/atoms.module';
-import { MNavbarComponent } from '@ui/molecules/m-navbar/m-navbar.component';
 
 @Component({
 	selector: 'app-footer',
 	standalone: true,
-	imports: [MNavbarComponent, AtomsModule],
+	imports: [AtomsModule],
 	templateUrl: './footer.component.html',
 	styleUrl: './footer.component.scss'
 })
