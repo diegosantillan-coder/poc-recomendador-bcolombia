@@ -116,7 +116,14 @@
 		position: relative;
 		overflow-x: hidden;
 		overflow-y: scroll;
-		max-height: 427px;
+
+		&--default {
+			max-height: 427px;
+		}
+
+		&--top {
+			max-height: 512px;
+		}
 	}
 
 	&__welcome {
@@ -158,8 +165,22 @@
 		}
 
 		&__container-image {
-			top: 58px;
-			left: 232px;
+			&--default {
+				width: 100px;
+				top: 58px;
+				left: 232px;
+			}
+
+			&--top {
+				width: 70px;
+				top: 38px;
+				left: 232px;
+			}
+		}
+
+		&__close {
+			left: 12px;
+			margin-top: 0.3rem;
 		}
 
 		&__welcome {
@@ -191,6 +212,7 @@ button {
 	font-style: italic;
 	display: grid;
 	justify-content: flex-end;
+	padding-right: 1rem;
 	font-size: 14px;
 	font-weight: 400;
 	animation: blink 1s infinite;

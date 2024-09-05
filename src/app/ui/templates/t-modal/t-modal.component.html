@@ -39,7 +39,14 @@
 	<button class="modal-content__close" type="button" (click)="handleClose()">
 		<img src="/images/close-white.svg" width="25" height="25" alt="" />
 	</button>
-	<div class="modal-content__chat" #chatContainer>
+	<div
+		[ngClass]="{
+			'modal-content__chat--default': welcome,
+			'modal-content__chat--top': !welcome
+		}"
+		class="modal-content__chat"
+		#chatContainer
+	>
 		@if (welcome) {
 			<div class="modal-content__welcome">
 				<div class="modal-content__greeting">
