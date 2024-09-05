@@ -1,0 +1,10 @@
+@import 'main';
+.step-2 {
+	height: 100vh;
+	padding: 1.5rem;
+
+	@include from($laptop) {
+		max-width: 50%;
+		margin: auto;
+	}
+}

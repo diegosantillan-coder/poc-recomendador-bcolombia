@@ -1,0 +1,17 @@
+@import 'main';
+
+.t-onboarding {
+	display: grid;
+	height: 90vh;
+	gap: 1rem;
+	&__header {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		align-items: center;
+
+		&-logo {
+			justify-self: end;
+		}
+	}
+}

@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { SessionService } from '@core/services/session/session.service';
 import { AtomsModule } from '@ui/atoms/atoms.module';
+import { MoleculesModule } from '../../molecules/molecules.module';
 
 @Component({
 	selector: 't-login-bankia',
 	standalone: true,
-	imports: [AtomsModule, ReactiveFormsModule],
+	imports: [AtomsModule, ReactiveFormsModule, MoleculesModule],
 	templateUrl: './t-login-bankia.component.html',
 	styleUrl: './t-login-bankia.component.scss'
 })

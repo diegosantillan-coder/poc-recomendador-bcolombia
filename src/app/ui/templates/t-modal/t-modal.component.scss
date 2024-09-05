@@ -29,7 +29,7 @@
 	max-height: 830px;
 	z-index: 1001;
 	max-width: 360px;
-	font-size: 24px;
+	font-size: 23px;
 	font-weight: 600;
 	line-height: 30px;
 	width: 100%;
@@ -98,12 +98,12 @@
 		overflow-x: hidden;
 		overflow-y: scroll;
 		max-height: 427px;
-		margin-left: 1rem;
 	}
 
 	&__welcome {
 		display: grid;
 		gap: 1rem;
+		margin-left: 0.6rem;
 	}
 
 	&__question {

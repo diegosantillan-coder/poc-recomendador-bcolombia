@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards/auth/auth.guard';
+import { onboardingRoutes } from './routes/onboarding.routes';
 
 export const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: 'login'
+		redirectTo: 'welcome'
 	},
 	{
 		path: 'login',
@@ -23,6 +24,15 @@ export const routes: Routes = [
 		path: 'home',
 		loadComponent: async () =>
 			import('./components/home/home.component').then((m) => m.HomeComponent),
+		canActivate: [AuthGuard]
+	},
+	{
+		path: 'onboarding',
+		loadComponent: async () =>
+			import('./components/onboarding/onboarding.component').then(
+				(m) => m.OnboardingComponent
+			),
+		children: [...onboardingRoutes],
 		canActivate: [AuthGuard]
 	},
 	{

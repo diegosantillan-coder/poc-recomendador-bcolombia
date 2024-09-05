@@ -1,0 +1,28 @@
+@if (showModal) {
+	<t-modal (onclose)="closeModal()"></t-modal>
+}
+<div class="t-onboarding">
+	<header class="t-onboarding__header">
+		<div (click)="goHome()" (keydown)="goHome()" tabindex="0">
+			<a-logo [src]="'images/close.svg'"></a-logo>
+		</div>
+		<div>
+			<a-title-bankia [text]="'BankIA'"></a-title-bankia>
+		</div>
+		<div
+			class="t-onboarding__header-logo"
+			(click)="goNextStep()"
+			(keydown)="goNextStep()"
+			tabindex="0"
+		>
+			<a-logo [src]="'images/arrow-right.svg'"></a-logo>
+		</div>
+	</header>
+	<div>
+		<a-logo [src]="pathImage"></a-logo>
+	</div>
+	<div>
+		<m-card-info [title]="title" [description]="description"></m-card-info>
+	</div>
+	<a-button [text]="'Continuar'" (buttonClick)="goNextStep()"></a-button>
+</div>
