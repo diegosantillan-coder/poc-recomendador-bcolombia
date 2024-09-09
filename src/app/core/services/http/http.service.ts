@@ -42,7 +42,7 @@ export class HttpService {
 	}
 
 	httpPOST<T, R>(url: string, body: T, opciones?: OptionsHttp): Observable<R> {
-		const timeoutValue = opciones?.timeout ?? 9000;
+		const timeoutValue = opciones?.timeout ?? 29000;
 		return this.http
 			.post<R>(url, body, opciones)
 			.pipe(timeout(timeoutValue), catchError(this.handleError));
