@@ -1,11 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-	AfterViewInit,
-	Component,
-	ElementRef,
-	OnInit,
-	ViewChild
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
 	selector: 'app-skeleton-css',
@@ -14,19 +8,18 @@ import {
 	templateUrl: './skeleton-css.component.html',
 	styleUrl: './skeleton-css.component.scss'
 })
-export class SkeletonCssComponent implements AfterViewInit, OnInit {
+export class SkeletonCssComponent implements OnInit {
 	@ViewChild('cardTemplate') cardTemplate!: ElementRef<HTMLTemplateElement>;
 	skeletons = Array(40).fill(0);
 	showSkeleton = true;
-	ngAfterViewInit(): void {
-		console.log(this.cardTemplate);
-		//this.cargarContenidoDOM();
-	}
+	// ngAfterViewInit(): void {
+	// 	console.log(this.cardTemplate);
+	// 	//this.cargarContenidoDOM();
+	// }
 
 	//Enfoque Imperativo
 	cargarContenidoDOM() {
 		const grid = document.querySelector('.grid');
-		console.log(grid);
 
 		fetch('https://jsonplaceholder.typicode.com/posts')
 			.then((response) => response.json())
@@ -35,9 +28,7 @@ export class SkeletonCssComponent implements AfterViewInit, OnInit {
 					grid.innerHTML = '';
 				}
 				posts.forEach((post: any) => {
-					const div = this.cardTemplate.nativeElement.content.cloneNode(
-						true
-					) as HTMLDivElement;
+					const div = this.cardTemplate.nativeElement.content.cloneNode(true) as HTMLDivElement;
 
 					const cardTitle = div.querySelector('[data-title]');
 					const cardBody = div.querySelector('[data-body]');

@@ -51,13 +51,10 @@ export class TOnboardingComponent {
 	showModal = false;
 
 	openModal(): void {
-		console.log('openModal');
-
 		this.showModal = true;
 	}
 
 	closeModal(): void {
-		console.log('closeModal');
 		this.goHome();
 		this.showModal = false;
 	}

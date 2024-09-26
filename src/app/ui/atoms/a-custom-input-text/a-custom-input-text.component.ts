@@ -1,11 +1,4 @@
-import {
-	Component,
-	ElementRef,
-	EventEmitter,
-	Input,
-	Output,
-	ViewChild
-} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -55,6 +48,10 @@ export class ACustomInputTextComponent {
 		this.currentValue = '';
 		this.inputSubject.next('');
 		this.inputChanged.emit(false);
+	}
+
+	clearInputFrom(): void {
+		this.textInput.nativeElement.value = '';
 	}
 
 	focusInput(): void {

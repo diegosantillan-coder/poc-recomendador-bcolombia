@@ -14,11 +14,6 @@ import { MScreenComponent } from './m-screen/m-screen.component';
 		MCardShortcutComponent,
 		MCardInfoComponent
 	],
-	exports: [
-		MCardIaComponent,
-		MScreenComponent,
-		MCardShortcutComponent,
-		MCardInfoComponent
-	]
+	exports: [MCardIaComponent, MScreenComponent, MCardShortcutComponent, MCardInfoComponent]
 })
 export class MoleculesModule {}

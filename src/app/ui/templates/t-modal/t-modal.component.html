@@ -1,19 +1,9 @@
 <!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
-<div
-	class="modal-overlay"
-	(click)="handleClose()"
-	(keydown)="handleClose()"
-	tabindex="0"
-></div>
+<div class="modal-overlay" (click)="handleClose()" (keydown)="handleClose()" tabindex="0"></div>
 
 <div class="modal-content">
 	<div class="modal-content__borde">
-		<img
-			class="modal-content__borde-img"
-			src="/images/background-lia.svg"
-			alt=""
-			loading="lazy"
-		/>
+		<img class="modal-content__borde-img" src="/images/background-lia.svg" alt="" loading="lazy" />
 	</div>
 	<div
 		[ngClass]="{
@@ -29,12 +19,7 @@
 			}"
 			class="modal-content__circle modal-content__circle--gray-light"
 		></div>
-		<img
-			class="modal-content__image"
-			src="/images/lia.svg"
-			alt=""
-			loading="lazy"
-		/>
+		<img class="modal-content__image" src="/images/lia.svg" alt="" loading="lazy" />
 	</div>
 	<button class="modal-content__close" type="button" (click)="handleClose()">
 		<img src="/images/close-white.svg" width="25" height="25" alt="" />

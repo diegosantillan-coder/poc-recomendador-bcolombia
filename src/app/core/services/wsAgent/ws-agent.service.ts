@@ -1,44 +1,66 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class WsAgentService {
 	private socket!: WebSocket;
-	private subject!: Subject<unknown>;
+	private messageSubject = new Subject<string>();
 
-	public connect(url: string): Subject<unknown> {
-		if (!this.subject) {
-			this.subject = this.create(url);
-		}
-		return this.subject;
-	}
-
-	private create(url: string): Subject<unknown> {
+	// Conectar al WebSocket
+	public connect(url: string): void {
 		this.socket = new WebSocket(url);
 
-		const subject = new Subject<unknown>();
-
-		this.socket.onmessage = (event) => {
-			subject.next(event.data);
+		// Al abrir la conexión
+		this.socket.onopen = (event) => {
+			console.log('Conectado al WebSocket.', event);
 		};
 
-		this.socket.onclose = () => subject.complete();
-		this.socket.onerror = (error) => subject.error(error);
+		// Al recibir un mensaje
+		this.socket.onmessage = (event) => {
+			this.messageSubject.next(event.data);
+			console.log('Mensaje recibido:', event.data);
+		};
 
-		return subject;
+		// Al ocurrir un error
+		this.socket.onerror = (event) => {
+			console.error('Error observado en el WebSocket:', event);
+		};
+
+		// Al cerrar la conexión
+		this.socket.onclose = (event) => {
+			console.log('WebSocket cerrado:', event);
+		};
 	}
 
-	public sendMessage(message: string) {
-		if (this.socket && this.socket.readyState === WebSocket.OPEN) {
-			this.socket.send(JSON.stringify(message));
+	public get messages$(): Observable<string> {
+		return this.messageSubject.asObservable();
+	}
+
+	public sendMessage(message: string): void {
+		if (this.socket.readyState === WebSocket.OPEN) {
+			this.sendFormattedMessage(message);
+		} else {
+			console.error('El WebSocket no está abierto. Estado listo: ' + this.socket.readyState);
 		}
 	}
 
-	public close() {
+	private sendFormattedMessage(message: string): void {
+		const chunkSize = 80;
+		for (let i = 0; i < message.length; i += chunkSize) {
+			const chunk = message.slice(i, i + chunkSize);
+			const payload = {
+				action: 'sendmessage',
+				message: chunk
+			};
+			this.socket.send(JSON.stringify(payload));
+		}
+	}
+
+	public closeConnection(): void {
 		if (this.socket) {
-			this.socket.close();
+			this.socket.close(); // Cierra la conexión WebSocket
 		}
 	}
 }

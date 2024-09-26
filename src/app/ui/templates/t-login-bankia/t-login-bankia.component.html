@@ -5,9 +5,7 @@
 	<div>
 		<m-card-info
 			[title]="'Hola, nos alegra mucho que estés aquí'"
-			[description]="
-				'Para continuar, inicia sesión con tu usuario y contraseña'
-			"
+			[description]="'Para continuar, inicia sesión con tu usuario y contraseña'"
 		></m-card-info>
 	</div>
 	<div>
@@ -43,8 +41,6 @@
 		</form>
 	</div>
 	<div class="t-login-bankia__button">
-		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
-			Continuar
-		</button>
+		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">Continuar</button>
 	</div>
 </div>

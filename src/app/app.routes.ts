@@ -16,9 +16,7 @@ export const routes: Routes = [
 	{
 		path: 'welcome',
 		loadComponent: async () =>
-			import('./components/screen-bank/screen-bank.component').then(
-				(m) => m.ScreenBankComponent
-			)
+			import('./components/screen-bank/screen-bank.component').then((m) => m.ScreenBankComponent)
 	},
 	{
 		path: 'home',
@@ -29,18 +27,14 @@ export const routes: Routes = [
 	{
 		path: 'onboarding',
 		loadComponent: async () =>
-			import('./components/onboarding/onboarding.component').then(
-				(m) => m.OnboardingComponent
-			),
+			import('./components/onboarding/onboarding.component').then((m) => m.OnboardingComponent),
 		children: [...onboardingRoutes],
 		canActivate: [AuthGuard]
 	},
 	{
 		path: 'skeleton',
 		loadComponent: async () =>
-			import('./components/skeleton/skeleton.component').then(
-				(m) => m.SkeletonComponent
-			),
+			import('./components/skeleton/skeleton.component').then((m) => m.SkeletonComponent),
 		canActivate: [AuthGuard]
 	},
 	{

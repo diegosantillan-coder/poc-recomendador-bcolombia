@@ -55,8 +55,6 @@ export class THomeBankiaComponent {
 	];
 
 	openModal(): void {
-		console.log('openModal');
-
 		this.showModal = true;
 	}
 
@@ -69,8 +67,6 @@ export class THomeBankiaComponent {
 	}
 
 	closeModal(): void {
-		console.log('closeModal');
-
 		this.showModal = false;
 	}
 }

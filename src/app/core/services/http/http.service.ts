@@ -1,9 +1,4 @@
-import {
-	HttpClient,
-	HttpErrorResponse,
-	HttpHeaders,
-	HttpParams
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { OptionsHttp } from '@core/models/options-http.interface';
 import { catchError, Observable, throwError, timeout } from 'rxjs';
@@ -62,8 +57,6 @@ export class HttpService {
 
 	private handleError(error: HttpErrorResponse) {
 		console.error('Error:', error);
-		return throwError(
-			'Ocurrió un error; por favor, intente de nuevo más tarde.'
-		);
+		return throwError('Ocurrió un error; por favor, intente de nuevo más tarde.');
 	}
 }
