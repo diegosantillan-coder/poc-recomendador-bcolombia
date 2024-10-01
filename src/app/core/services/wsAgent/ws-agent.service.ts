@@ -1,4 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { WebSocketMessage } from '@core/interfaces/agentws.interface';
+import { UserBankia } from '@core/interfaces/user-bankia.interface';
+import { UserService } from '@core/services/user/user.service';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -6,7 +9,12 @@ import { Observable, Subject } from 'rxjs';
 })
 export class WsAgentService {
 	private socket!: WebSocket;
+	user = signal<UserBankia | null>(null);
 	private messageSubject = new Subject<string>();
+
+	constructor(private userService: UserService) {
+		this.user.set(this.userService.getUser());
+	}
 
 	// Conectar al WebSocket
 	public connect(url: string): void {
@@ -20,7 +28,6 @@ export class WsAgentService {
 		// Al recibir un mensaje
 		this.socket.onmessage = (event) => {
 			this.messageSubject.next(event.data);
-			console.log('Mensaje recibido:', event.data);
 		};
 
 		// Al ocurrir un error
@@ -50,11 +57,17 @@ export class WsAgentService {
 		const chunkSize = 80;
 		for (let i = 0; i < message.length; i += chunkSize) {
 			const chunk = message.slice(i, i + chunkSize);
-			const payload = {
-				action: 'sendmessage',
-				message: chunk
+
+			const webSocketMessage: WebSocketMessage = {
+				service: 'chat',
+				action: 'sendMessage',
+				data: {
+					user_id: this.user()?.usuario || '',
+					session_id: this.user()?.sessionId || '',
+					message: chunk
+				}
 			};
-			this.socket.send(JSON.stringify(payload));
+			this.socket.send(JSON.stringify(webSocketMessage));
 		}
 	}
 
