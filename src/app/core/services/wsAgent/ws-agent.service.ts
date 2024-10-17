@@ -54,21 +54,16 @@ export class WsAgentService {
 	}
 
 	private sendFormattedMessage(message: string): void {
-		const chunkSize = 80;
-		for (let i = 0; i < message.length; i += chunkSize) {
-			const chunk = message.slice(i, i + chunkSize);
-
-			const webSocketMessage: WebSocketMessage = {
-				service: 'chat',
-				action: 'sendMessage',
-				data: {
-					user_id: this.user()?.usuario || '',
-					session_id: this.user()?.sessionId || '',
-					message: chunk
-				}
-			};
-			this.socket.send(JSON.stringify(webSocketMessage));
-		}
+		const webSocketMessage: WebSocketMessage = {
+			service: 'chat',
+			action: 'sendMessage',
+			data: {
+				user_id: this.user()?.usuario || '',
+				session_id: this.user()?.sessionId || '',
+				message: message
+			}
+		};
+		this.socket.send(JSON.stringify(webSocketMessage));
 	}
 
 	public closeConnection(): void {
