@@ -12,14 +12,14 @@ export class AgentService extends HttpService {
 	async getResponseAgentAsync(
 		question: QuestionRequest
 	): Promise<AgentResponse> {
-		this.addHeader('x-api-key', 'o6HDjcuRP61vHwEgmq0Fl41Bk9sRX8PB9L6TIjfl');
+		this.addHeader('x-api-key', '1cwrqloywh');
 		const options: OptionsHttp = {
 			headers: this.getHeaders()
 		};
 		try {
 			const response: AgentResponse = await firstValueFrom(
 				this.httpPOST(
-					'https://vhg5cimh87.execute-api.us-east-1.amazonaws.com/dev/bedrock-agent',
+					'https://vhg5cimh87.execute-api.us-east-1.amazonaws.com/dev/bian-agent',
 					question,
 					options
 				)
