@@ -1,0 +1,77 @@
+@import 'main';
+.header-olimpica {
+	background-color: #e30613;
+	color: white;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	padding: 14px 35px 14px 15px;
+
+	&__shipping {
+		display: none;
+	}
+
+	&__login-text {
+		display: none;
+	}
+
+	&__heart {
+		display: none;
+	}
+
+	&__user {
+		display: block;
+	}
+
+	&__login {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		justify-items: center;
+	}
+
+	&__search {
+		grid-row: 2/3;
+		grid-column: 1/3;
+		margin: auto;
+	}
+
+	@include from($laptop) {
+		grid-template-columns: 20% 15% 40% 25%;
+		grid-template-rows: 1fr;
+
+		&__shipping {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		&__search {
+			grid-column: 3/4;
+			grid-row: 1/2;
+		}
+
+		&__login-text {
+			display: flex;
+			gap: 1rem;
+		}
+
+		&__separator {
+			margin: auto;
+		}
+
+		&__heart {
+			display: block;
+		}
+
+		&__user {
+			display: none;
+		}
+
+		&__login {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
