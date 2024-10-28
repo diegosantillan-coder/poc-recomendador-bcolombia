@@ -38,7 +38,7 @@
 	}
 
 	@include from($laptop) {
-		grid-template-columns: 20% 15% 40% 25%;
+		grid-template-columns: 15% 10% 50% 25%;
 		grid-template-rows: 1fr;
 
 		&__shipping {
@@ -51,6 +51,7 @@
 		&__search {
 			grid-column: 3/4;
 			grid-row: 1/2;
+			width: 50%;
 		}
 
 		&__login-text {

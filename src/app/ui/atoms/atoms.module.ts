@@ -5,6 +5,7 @@ import { ACardWelcomeComponent } from './a-card-welcome/a-card-welcome.component
 import { ACustomButtonComponent } from './a-custom-button/a-custom-button.component';
 import { ACustomInputTextComponent } from './a-custom-input-text/a-custom-input-text.component';
 import { ALogoComponent } from './a-logo/a-logo.component';
+import { ASearchTextComponent } from './a-search-text/a-search-text.component';
 import { ATitleBankiaComponent } from './a-title-bankia/a-title-bankia.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ATitleBankiaComponent } from './a-title-bankia/a-title-bankia.component
 		ACustomButtonComponent,
 		ACustomInputTextComponent,
 		ACardWelcomeComponent,
-		ATitleBankiaComponent
+		ATitleBankiaComponent,
+		ASearchTextComponent
 	],
 	exports: [
 		AButtonComponent,
@@ -24,7 +26,8 @@ import { ATitleBankiaComponent } from './a-title-bankia/a-title-bankia.component
 		ACustomButtonComponent,
 		ACustomInputTextComponent,
 		ACardWelcomeComponent,
-		ATitleBankiaComponent
+		ATitleBankiaComponent,
+		ASearchTextComponent
 	]
 })
 export class AtomsModule {}
