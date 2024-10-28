@@ -1,0 +1,40 @@
+@import 'main';
+.home-olimpica {
+	display: grid;
+
+	&__main {
+		display: grid;
+		row-gap: 2rem;
+	}
+
+	&__location {
+		padding-top: 1rem;
+		justify-self: end;
+		justify-items: center;
+		padding-right: 0;
+		margin: auto;
+	}
+
+	&__kitchen-desktop {
+		display: none;
+	}
+
+	&__kitchen-mobile {
+		display: block;
+	}
+
+	@include from($laptop) {
+		&__location {
+			margin: 0;
+			padding-right: 220px;
+		}
+
+		&__kitchen-desktop {
+			display: block;
+		}
+
+		&__kitchen-mobile {
+			display: none;
+		}
+	}
+}

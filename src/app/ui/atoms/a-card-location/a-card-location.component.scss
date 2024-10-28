@@ -1,0 +1,25 @@
+.a-card-location {
+	display: grid;
+	grid-template-columns: 10% 90%;
+	border: 1px solid #e0e0e0;
+	color: #005ca9;
+	border-radius: 10px;
+	min-height: 50px;
+	min-width: 300px;
+	width: 100%;
+	align-items: center;
+	justify-items: center;
+	&__info {
+		display: grid;
+		justify-items: center;
+		grid-template-columns: 1fr;
+
+		&-1 {
+			font-weight: 600;
+		}
+
+		&-2 {
+			font-size: 12px;
+		}
+	}
+}
