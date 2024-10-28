@@ -3,10 +3,10 @@
 	background-color: #e30613;
 	color: white;
 	display: grid;
-	gap: 2rem;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	padding: 14px 35px 14px 15px;
+	align-items: center;
 
 	&__shipping {
 		display: none;
@@ -40,6 +40,7 @@
 	@include from($laptop) {
 		grid-template-columns: 15% 10% 50% 25%;
 		grid-template-rows: 1fr;
+		gap: 2rem;
 
 		&__shipping {
 			display: flex;
@@ -65,6 +66,7 @@
 
 		&__heart {
 			display: block;
+			justify-self: center;
 		}
 
 		&__user {
@@ -73,6 +75,7 @@
 
 		&__login {
 			grid-template-columns: repeat(3, 1fr);
+			justify-items: start;
 		}
 	}
 }

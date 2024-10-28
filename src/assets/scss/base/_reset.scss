@@ -152,7 +152,7 @@ img {
 /* Configura el tamaño y fuente predeterminada */
 body {
 	line-height: 1;
-	background-color: #f2f2ff;
+	background-color: white;
 	color: #000;
 }
 
@@ -170,12 +170,7 @@ textarea {
 button {
 	width: 100%;
 	padding: 15px 32px 15px 32px;
-	background: linear-gradient(
-		110.68deg,
-		#5452f7 1.52%,
-		#6429cd 26.95%,
-		#b100a3 138.13%
-	);
+	background: linear-gradient(110.68deg, #5452f7 1.52%, #6429cd 26.95%, #b100a3 138.13%);
 	color: white;
 	border: none;
 	border-radius: 100px;

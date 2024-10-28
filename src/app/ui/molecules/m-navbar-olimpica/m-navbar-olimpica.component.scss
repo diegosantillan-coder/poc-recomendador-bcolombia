@@ -1,0 +1,82 @@
+@import 'main';
+.m-navbar-olimpica {
+	display: grid;
+	background-color: #005ca9;
+	color: white;
+	min-height: 80px;
+	align-content: center;
+	align-items: center;
+
+	&__flash {
+		background-color: #e30613;
+		padding-top: 9px;
+		padding-right: 5px;
+		border-radius: 5px;
+		width: 70px;
+		height: 35px;
+	}
+
+	&__nav-desktop {
+		display: none;
+	}
+
+	&__nav-mobile {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 1rem;
+	}
+
+	@include from($laptop) {
+		grid-template-columns: 1fr 1fr;
+
+		&__nav-desktop {
+			display: flex;
+			column-gap: 1rem;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__nav-mobile {
+			display: none;
+		}
+
+		&__card {
+			display: grid;
+			align-items: center;
+			justify-self: end;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&__flex {
+			display: flex;
+			align-items: center;
+			column-gap: 1rem;
+		}
+
+		&__credit-card {
+			margin-top: 15px;
+			width: 50px;
+			height: 50px;
+		}
+
+		&__gancho {
+			display: grid;
+			align-items: center;
+			justify-items: center;
+			grid-template-columns: 1fr 1fr;
+
+			&-img {
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+}
+
+.hidden {
+	display: none;
+	@include from($laptop) {
+		display: grid;
+	}
+}
