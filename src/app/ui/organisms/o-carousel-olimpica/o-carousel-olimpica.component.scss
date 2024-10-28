@@ -64,3 +64,28 @@
 .carousel-control-next {
 	right: 10px;
 }
+
+/* Indicadores de posición (puntos) */
+.carousel-indicators {
+	position: absolute;
+	bottom: 15px;
+	left: 0%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8px;
+}
+
+.carousel-indicators span {
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.carousel-indicators span.active {
+	opacity: 1;
+}
