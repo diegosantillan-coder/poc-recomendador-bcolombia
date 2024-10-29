@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TModalComponent } from '@ui/templates/t-modal/t-modal.component';
 import { ACardLocationComponent } from "../../../ui/atoms/a-card-location/a-card-location.component";
 import { ALogoComponent } from "../../../ui/atoms/a-logo/a-logo.component";
 import { MNavbarOlimpicaComponent } from "../../../ui/molecules/m-navbar-olimpica/m-navbar-olimpica.component";
@@ -8,10 +9,19 @@ import { HeaderOlimpicaComponent } from "../header-olimpica/header-olimpica.comp
 @Component({
   selector: 'app-home-olimpica',
   standalone: true,
-  imports: [HeaderOlimpicaComponent, MNavbarOlimpicaComponent, ACardLocationComponent, ALogoComponent, OCarouselOlimpicaComponent],
+  imports: [HeaderOlimpicaComponent,TModalComponent, MNavbarOlimpicaComponent, ACardLocationComponent, ALogoComponent, OCarouselOlimpicaComponent],
   templateUrl: './home-olimpica.component.html',
   styleUrl: './home-olimpica.component.scss'
 })
 export class HomeOlimpicaComponent {
+  @Input() showModal = true;
 
+  openModal(): void {
+		this.showModal = true;
+	}
+
+  
+	closeModal(): void {
+		this.showModal = false;
+	}
 }

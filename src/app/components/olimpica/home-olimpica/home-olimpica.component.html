@@ -2,6 +2,9 @@
 	<app-header-olimpica></app-header-olimpica>
 	<m-navbar-olimpica></m-navbar-olimpica>
 	<div class="home-olimpica__main">
+		@if (showModal) {
+			<t-modal (onclose)="closeModal()"></t-modal>
+		}
 		<a-card-location class="home-olimpica__location"></a-card-location>
 		<div class="home-olimpica__kitchen-desktop">
 			<a-logo [src]="'images/olimpica/banner-kitchen.webp'"></a-logo>
@@ -11,6 +14,18 @@
 		</div>
 		<div>
 			<o-carousel-olimpica></o-carousel-olimpica>
+		</div>
+		<div class="home-olimpica__flash">
+			<a-logo [src]="'images/olimpica/banner-flash.webp'"></a-logo>
+		</div>
+		<div
+			class="home-olimpica__main__container-image"
+			(click)="openModal()"
+			(keyup)="openModal()"
+			tabindex="0"
+		>
+			<div class="home-olimpica__main__circle home-olimpica__main__circle--purple"></div>
+			<img class="home-olimpica__main__image" src="/images/lia.svg" alt="" loading="lazy" />
 		</div>
 	</div>
 </div>
