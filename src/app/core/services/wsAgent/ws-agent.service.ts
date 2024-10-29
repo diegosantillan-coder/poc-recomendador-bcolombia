@@ -56,7 +56,7 @@ export class WsAgentService {
 	private sendFormattedMessage(message: string): void {
 		const webSocketMessage: WebSocketMessage = {
 			service: 'chat',
-			action: 'sendMessage',
+			action: 'sendmessage',
 			data: {
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
