@@ -17,17 +17,17 @@ export class QuestionService {
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero mi diagnóstico financiero'
+				prompt: '¿Puedo comprar sin estar registrado en la página?'
 			},
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero controlar mejor mis gastos'
+				prompt: '¿Cuál es el costo de envío?'
 			},
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero aprender hábitos de ahorro'
+				prompt: '¿Con qué medios puedo pagar?'
 			}
 		];
 	}
