@@ -12,12 +12,6 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 export class OCarouselOlimpicaComponent {
   carouselItems = [
     {
-      background: 'images/olimpica/first-image.webp',
-      title: "Pa'lante Colombia",
-      subtitle: 'La educación es la herencia más valiosa',
-      buttonText: '¡Donemos Juntos!'
-    },
-    {
       background: 'images/olimpica/second-image.webp',
       title: 'Otro Slide',
       subtitle: 'Descripción del segundo slide',
@@ -61,24 +55,6 @@ export class OCarouselOlimpicaComponent {
     },
     {
       background: 'images/olimpica/ninth-image.webp',
-      title: 'Otro Slide',
-      subtitle: 'Descripción del segundo slide',
-      buttonText: 'Más Información'
-    },
-    {
-      background: 'images/olimpica/tenth-image.webp',
-      title: 'Otro Slide',
-      subtitle: 'Descripción del segundo slide',
-      buttonText: 'Más Información'
-    },
-    {
-      background: 'images/olimpica/eleventh-image.webp',
-      title: 'Otro Slide',
-      subtitle: 'Descripción del segundo slide',
-      buttonText: 'Más Información'
-    },
-    {
-      background: 'images/olimpica/twelfth-image.webp',
       title: 'Otro Slide',
       subtitle: 'Descripción del segundo slide',
       buttonText: 'Más Información'

@@ -15,7 +15,7 @@ import { HeaderOlimpicaComponent } from "../header-olimpica/header-olimpica.comp
   styleUrl: './home-olimpica.component.scss'
 })
 export class HomeOlimpicaComponent {
-  @Input() showModal = true;
+  @Input() showModal = false;
 
   openModal(): void {
 		this.showModal = true;
