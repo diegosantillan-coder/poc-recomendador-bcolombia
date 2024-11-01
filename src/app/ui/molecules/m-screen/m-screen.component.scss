@@ -1,13 +1,8 @@
 @import 'main';
 .m-screen {
-	background: linear-gradient(
-		110.68deg,
-		#5452f7 1.52%,
-		#6429cd 26.95%,
-		#b100a3 138.13%
-	);
-	height: 100vh; /* Ajusta la altura según sea necesario */
-	width: 100%; /* Ajusta el ancho según sea necesario */
+	background: linear-gradient(110.68deg, #5452f7 1.52%, #6429cd 26.95%, #b100a3 138.13%);
+	height: 100vh;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
