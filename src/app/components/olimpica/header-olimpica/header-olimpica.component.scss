@@ -1,6 +1,6 @@
 @import 'main';
 .header-olimpica {
-	background-color: #e30613;
+	background-color: #1d1d1b;
 	color: white;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -10,6 +10,11 @@
 
 	&__shipping {
 		display: none;
+	}
+
+	&__logo {
+		font-size: 24px;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
 
 	&__login-text {
