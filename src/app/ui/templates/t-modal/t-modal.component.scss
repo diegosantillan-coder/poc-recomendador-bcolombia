@@ -129,7 +129,7 @@
 	&__welcome {
 		display: grid;
 		gap: 1rem;
-		margin-left: 0.6rem;
+		margin-left: 5px;
 	}
 
 	&__question {
@@ -155,8 +155,8 @@
 
 	@include from($laptop) {
 		top: 54%;
-		left: 83%;
-		max-width: 560px;
+		left: 77%;
+		max-width: 660px;
 
 		&__borde {
 			&-img {
@@ -185,6 +185,7 @@
 
 		&__welcome {
 			justify-content: start;
+			margin-left: 25px;
 		}
 
 		&__greeting {

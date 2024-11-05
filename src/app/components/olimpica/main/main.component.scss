@@ -1,0 +1,91 @@
+@import 'main';
+.main-olimpica {
+	display: grid;
+
+	&__main {
+		display: grid;
+		row-gap: 2rem;
+		&__image {
+			border-radius: 0px 0px 50% 50%;
+			width: 60px;
+			height: 60px;
+		}
+
+		&__circle {
+			position: absolute;
+			top: 41%;
+			left: 31%;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+
+			&--purple {
+				background-color: rgb(214, 203, 203);
+			}
+		}
+
+		&__location {
+			padding-top: 1rem;
+			justify-self: end;
+			justify-items: center;
+			padding-right: 0;
+			margin: auto;
+		}
+
+		&__kitchen-desktop {
+			display: none;
+		}
+
+		&__kitchen-mobile {
+			display: block;
+		}
+
+		&__container-image {
+			margin: 0 auto;
+			position: fixed;
+			right: 14%;
+			bottom: 25%;
+			display: inline-block;
+			z-index: 0;
+			width: 100px;
+			height: auto;
+			cursor: pointer;
+		}
+	}
+
+	@include from($laptop) {
+		&__location {
+			display: flex;
+			margin: auto;
+		}
+
+		&__kitchen-desktop {
+			display: block;
+		}
+
+		&__kitchen-mobile {
+			display: none;
+		}
+
+		&__main {
+			&__container-image {
+				right: 10%;
+				bottom: 20%;
+			}
+
+			&__image {
+				width: auto;
+				height: auto;
+			}
+
+			&__circle {
+				top: 42%;
+				left: 47%;
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+}

@@ -1,14 +1,16 @@
 import { Routes } from '@angular/router';
+import { checkOutRoutes } from './routes/checkout.routes';
 
 export const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: 'olimpica'
+		redirectTo: 'super-retail'
 	},
 	{
-		path: 'olimpica',
+		path: 'super-retail',
 		loadComponent: async () =>
-			import('./components/olimpica/home-olimpica/home-olimpica.component').then((m) => m.HomeOlimpicaComponent),
+			import('./components/olimpica/main/main.component').then((m) => m.MainComponent),
+		children: [...checkOutRoutes],
 	},
 ];

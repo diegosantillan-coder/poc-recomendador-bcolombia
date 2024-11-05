@@ -15,5 +15,5 @@ export const onboardingRoutes: Routes = [
 		path: 'step-3',
 		loadComponent: async () =>
 			import('../components/onboarding/step-3/step-3.component').then((m) => m.Step3Component)
-	}
+	},
 ];

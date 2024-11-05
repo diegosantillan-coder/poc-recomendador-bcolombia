@@ -4,7 +4,7 @@
 	display: grid;
 	grid-template-columns: 90% 10%;
 	align-items: center;
-	width: 300px;
+	width: 295px;
 	gap: 10px;
 	padding: 18px 24px 18px 0px;
 	border-radius: 16px;
@@ -16,7 +16,7 @@
 	cursor: pointer;
 
 	@include from($laptop) {
-		width: 452px;
+		width: 500px;
 		justify-items: start;
 		padding: 24px;
 		border-radius: 16px;
