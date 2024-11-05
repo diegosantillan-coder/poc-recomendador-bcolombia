@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
 	selector: 'a-card-chat',
@@ -10,5 +11,5 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 	encapsulation: ViewEncapsulation.None // O encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ACardChatComponent {
-	@Input() chats: { text: string; isUser: boolean }[] = [];
+	@Input() chats: { text: SafeHtml; isUser: boolean }[] = [];
 }

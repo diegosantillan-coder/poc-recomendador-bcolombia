@@ -10,6 +10,7 @@ import {
 	Output,
 	ViewChild
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { QuestionRequest, Request } from '@core/interfaces/question.interface';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { AgentService } from '@core/services/agent/agent.service';
@@ -35,12 +36,14 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	private readonly userService = inject(UserService);
 	private readonly questionService = inject(QuestionService);
 	private readonly formatTextService = inject(TextService);
+	private readonly sanitizer = inject(DomSanitizer);
 
 	user: UserBankia = this.userService.getUser();
 	messages$!: Observable<string>; // Observable para los mensajes
 	connection = this.wsAgentService.connect(
 		'wss://w2dfgu3evd.execute-api.us-east-1.amazonaws.com/qa/'
 	);
+
 
 	ngOnDestroy(): void {
 		this.questionService.setUser({ usuario: '', sessionId: '', password: '' });
@@ -52,7 +55,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.listenerWebSocket();
 	}
 
-	chats: { text: string; isUser: boolean }[] = [];
+	chats: { text: SafeHtml; isUser: boolean }[] = [];
 
 	valueInput = '';
 	isInputEmpty = false;
@@ -181,8 +184,8 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private updateLastChatMessage(message: string): void {
-		const formattedMessage = this.formatMessageAsList(message);
-		this.chats[this.chats.length - 1].text = formattedMessage;
+		const sanitizeMessage = this.sanitizeMessage(message);
+		this.chats[this.chats.length - 1].text = sanitizeMessage;
 	}
 
 	listenerWebSocket(): void {
@@ -222,11 +225,29 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.isInputEmpty = true;
 	}
 
-	private formatMessageAsList(message: string): string {
-		const lines = message.split('\n').filter((line) => line.trim() !== '');
-		const listItems = lines.map((line) => `<li>${line}</li>`).join('');
-		return `<ul>${listItems}</ul>`; // Encerrar en un <ul>
+	private formatMessageAsList(message: string): string  {
+		// Extraer partes que no sean productos (las líneas que contienen imágenes o botones se quedan como están)
+		const lines = message.split('\n');
+		
+		// Identificar las líneas que parecen productos por el símbolo "•" al inicio o algún otro criterio
+		const productLines = lines.filter((line) => line.trim().startsWith('•'));
+	
+		// Formatear solo las líneas de productos con <li>, y dejar el resto del mensaje intacto
+		const formattedLines = lines.map((line) => {
+			if (line.trim().startsWith('•')) {
+				return `<li>${line.trim()}</li>`;
+			}
+			return line;  // Devolver las líneas que no son productos sin modificar
+		}).join('\n');
+	
+		return `<ul>${formattedLines}</ul>`;
 	}
+	
+
+	private sanitizeMessage(message: string): SafeHtml {
+		return this.sanitizer.bypassSecurityTrustHtml(message);
+	}
+
 
 	//Agente virtual depreciado por el uso de WebSocket
 	async askingTheAgent(request: QuestionRequest): Promise<void> {
