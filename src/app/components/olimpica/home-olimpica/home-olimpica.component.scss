@@ -57,8 +57,8 @@
 
 	@include from($laptop) {
 		&__location {
-			margin: 0;
-			padding-right: 220px;
+			display: flex;
+			margin: auto;
 		}
 
 		&__kitchen-desktop {
