@@ -184,7 +184,8 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	private updateLastChatMessage(message: string): void {
-		const sanitizeMessage = this.sanitizeMessage(message);
+		const formattedMessage = this.formatMessageAsList(message);
+		const sanitizeMessage = this.sanitizeMessage(formattedMessage);
 		this.chats[this.chats.length - 1].text = sanitizeMessage;
 	}
 
