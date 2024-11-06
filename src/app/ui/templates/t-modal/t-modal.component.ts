@@ -226,23 +226,45 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.isInputEmpty = true;
 	}
 
-	private formatMessageAsList(message: string): string  {
-		// Extraer partes que no sean productos (las líneas que contienen imágenes o botones se quedan como están)
+	private formatMessageAsList(message: string): string {
 		const lines = message.split('\n');
-		
-		// Identificar las líneas que parecen productos por el símbolo "•" al inicio o algún otro criterio
-		const productLines = lines.filter((line) => line.trim().startsWith('•'));
 	
-		// Formatear solo las líneas de productos con <li>, y dejar el resto del mensaje intacto
-		const formattedLines = lines.map((line) => {
-			if (line.trim().startsWith('•')) {
-				return `<li>${line.trim()}</li>`;
+		// Arrays para almacenar las líneas formateadas
+		const formattedListItems: string[] = [];
+		let isOrderedList = false;
+	
+		// Mapear cada línea para detectar y formatear listas
+		lines.forEach((line) => {
+			const trimmedLine = line.trim();
+	
+			// Verificar si es una lista de puntos (• o -)
+			if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
+				formattedListItems.push(`<li>${trimmedLine}</li>`);
+				isOrderedList = false;
 			}
-			return line;  // Devolver las líneas que no son productos sin modificar
-		}).join('\n');
+			// Verificar si es una lista numerada (inicia con "1.", "2.", etc.)
+			else if (/^\d+\./.test(trimmedLine)) {
+				formattedListItems.push(`<li>${trimmedLine}</li>`);
+				isOrderedList = true;
+			}
+			// Mantener las líneas no relacionadas con listas sin formato
+			else {
+				formattedListItems.push(trimmedLine);
+			}
+		});
 	
-		return `<ul>${formattedLines}</ul>`;
+		// Envolver las líneas formateadas en <ul> o <ol> si contienen elementos de lista
+		if (formattedListItems.some(line => line.startsWith('<li>'))) {
+			return isOrderedList 
+				? `<ol>${formattedListItems.join('\n')}</ol>` 
+				: `<ul>${formattedListItems.join('\n')}</ul>`;
+		}
+	
+		// Si no contiene elementos de lista, devolver el mensaje sin modificar
+		return message;
 	}
+	
+	
 	
 
 	private sanitizeMessage(message: string): SafeHtml {

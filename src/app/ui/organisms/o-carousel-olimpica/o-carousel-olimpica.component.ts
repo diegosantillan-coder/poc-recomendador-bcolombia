@@ -53,12 +53,6 @@ export class OCarouselOlimpicaComponent {
       subtitle: 'Descripción del segundo slide',
       buttonText: 'Más Información'
     },
-    {
-      background: 'images/olimpica/ninth-image.webp',
-      title: 'Otro Slide',
-      subtitle: 'Descripción del segundo slide',
-      buttonText: 'Más Información'
-    },
   ];
 
   duplicatedCarouselItems = [
