@@ -63,6 +63,8 @@ export class WsAgentService {
 				message: message
 			}
 		};
+		console.log('Enviando mensaje:', webSocketMessage);
+		
 		this.socket.send(JSON.stringify(webSocketMessage));
 	}
 

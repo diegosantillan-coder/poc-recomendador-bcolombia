@@ -155,6 +155,50 @@
 
 	@include from($laptop) {
 		top: 54%;
+		left: 72%;
+		max-width: 560px;
+
+		&__borde {
+			&-img {
+				margin-top: -94px;
+			}
+		}
+
+		&__container-image {
+			&--default {
+				width: 100px;
+				top: 58px;
+				left: 232px;
+			}
+
+			&--top {
+				width: 70px;
+				top: 38px;
+				left: 232px;
+			}
+		}
+
+		&__close {
+			left: 12px;
+			margin-top: 0.3rem;
+		}
+
+		&__welcome {
+			justify-content: start;
+		}
+
+		&__greeting {
+			text-align: left;
+		}
+
+		&__question {
+			grid-template-columns: 85% 15%;
+			margin-left: 1.8rem;
+		}
+	}
+
+	@include from($laptop-large) {
+		top: 54%;
 		left: 83%;
 		max-width: 560px;
 
@@ -196,6 +240,7 @@
 			margin-left: 1.8rem;
 		}
 	}
+
 }
 
 button {
