@@ -17,6 +17,7 @@ import { QuestionService } from '@core/services/question/question.service';
 import { TextService } from '@core/services/text/text.service';
 import { UserService } from '@core/services/user/user.service';
 import { WsAgentService } from '@core/services/wsAgent/ws-agent.service';
+import { TranslateModule } from '@ngx-translate/core';
 import { ACustomInputTextComponent } from '@ui/atoms/a-custom-input-text/a-custom-input-text.component';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { Observable } from 'rxjs';
@@ -25,7 +26,7 @@ import { ACardChatComponent } from '../../atoms/a-card-chat/a-card-chat.componen
 @Component({
 	selector: 't-modal',
 	standalone: true,
-	imports: [AtomsModule, NgClass, ACardChatComponent],
+	imports: [AtomsModule, NgClass, ACardChatComponent, TranslateModule],
 	templateUrl: './t-modal.component.html',
 	styleUrl: './t-modal.component.scss'
 })
@@ -165,6 +166,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	private handleWebSocketMessage(
 		message: string,
 		timeoutDuration: number,
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		inactivityTimeout: any
 	): void {
 		this.reiniciarTemporizador(timeoutDuration, inactivityTimeout);
@@ -189,6 +191,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		console.log('Conexión WebSocket:', this.connection);
 
 		const timeoutDuration = 100;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		let inactivityTimeout: any;
 
 		this.wsAgentService.messages$.subscribe({
@@ -205,6 +208,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		this.habilitarBotones();
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private reiniciarTemporizador(timeoutDuration: number, inactivityTimeout: any): void {
 		if (inactivityTimeout) {
 			clearTimeout(inactivityTimeout);
@@ -212,7 +216,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		inactivityTimeout = setTimeout(() => this.finalizarPorInactividad(), timeoutDuration);
 	}
 
-	private handleWebSocketError(error: any): void {
+	private handleWebSocketError(error: unknown): void {
 		console.error('Error WebSocket:', error);
 	}
 

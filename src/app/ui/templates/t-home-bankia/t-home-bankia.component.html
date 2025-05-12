@@ -9,9 +9,12 @@
 		<div class="t-home-bankia__operations">
 			<m-card-shortcut
 				[options]="transactions"
-				[subTitle]="'Realiza transacciones'"
+				[subTitle]="'home.transactionsSubtitle' | translate"
 			></m-card-shortcut>
-			<m-card-shortcut [options]="formalities" [subTitle]="'Realiza trámites'"></m-card-shortcut>
+			<m-card-shortcut
+				[options]="formalities"
+				[subTitle]="'home.formalitiesSubtitle' | translate"
+			></m-card-shortcut>
 		</div>
 
 		<div

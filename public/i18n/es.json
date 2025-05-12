@@ -1,0 +1,41 @@
+{
+	"TITLE": "Bienvenido",
+	"GREETING": "Hola, nos alegra mucho que estés aquí",
+	"DESCRIPTION": "Para continuar, inicia sesión con tu usuario y contraseña",
+	"LABEL": {
+		"USERNAME": "Usuario",
+		"PASSWORD": "Contraseña"
+	},
+	"PLACEHOLDER": {
+		"USERNAME": "Ingresa tu usuario",
+		"PASSWORD": "Ingresa tu contraseña"
+	},
+	"BUTTON": {
+		"CONTINUE": "Continuar"
+	},
+	"home": {
+    "placeHolderInputChat": "Hazme una pregunta ...",
+		"transactionsSubtitle": "Realiza transacciones",
+		"formalitiesSubtitle": "Realiza trámites",
+		"transactions": {
+			"sendMoney": "Enviar dinero",
+			"payCards": "Pagar tarjetas",
+			"payCredit": "Pagar crédito"
+		},
+		"formalities": {
+			"bankStatements": "Extractos bancarios",
+			"upcomingPayments": "Próximos pagos",
+			"faq": "Preguntas frecuentes"
+		},
+		"modal": {
+			"greeting": "¡Hola! Soy LIA",
+			"help": "tu asesora de productos IA",
+			"howCanIHelp": "¿cómo puedo ayudarte hoy?",
+			"defaultQuestions": {
+				"question1": "Quiero mi diagnóstico financiero",
+				"question2": "Quiero controlar mejor mis gastos",
+				"question3": "Quiero aprender hábitos de ahorro"
+			}
+		}
+	}
+}

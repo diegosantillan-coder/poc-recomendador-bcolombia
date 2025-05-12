@@ -1,0 +1,41 @@
+{
+	"TITLE": "Welcome",
+	"GREETING": "Hello, we're glad you're here",
+	"DESCRIPTION": "To continue, log in with your username and password",
+	"LABEL": {
+		"USERNAME": "Username",
+		"PASSWORD": "Password"
+	},
+	"PLACEHOLDER": {
+		"USERNAME": "Enter your username",
+		"PASSWORD": "Enter your password"
+	},
+	"BUTTON": {
+		"CONTINUE": "Continue"
+	},
+	"home": {
+    "placeHolderInputChat": "Ask me a question...",
+		"transactionsSubtitle": "Perform transactions",
+		"formalitiesSubtitle": "Carry out formalities",
+		"transactions": {
+			"sendMoney": "Send money",
+			"payCards": "Pay cards",
+			"payCredit": "Pay credit"
+		},
+		"formalities": {
+			"bankStatements": "Bank statements",
+			"upcomingPayments": "Upcoming payments",
+			"faq": "Frequently asked questions"
+		},
+		"modal": {
+			"greeting": "Hello! I'm LIA",
+			"help": "your AI product advisor",
+			"howCanIHelp": "How can I assist you today?",
+			"defaultQuestions": {
+				"question1": "I want my financial diagnosis",
+				"question2": "I want to better control my expenses",
+				"question3": "I want to learn saving habits"
+			}
+		}
+	}
+}

@@ -4,23 +4,25 @@ import { Router } from '@angular/router';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { QuestionService } from '@core/services/question/question.service';
 import { SessionService } from '@core/services/session/session.service';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '../../molecules/molecules.module';
 
 @Component({
 	selector: 't-login-bankia',
 	standalone: true,
-	imports: [AtomsModule, ReactiveFormsModule, MoleculesModule],
+	imports: [AtomsModule, ReactiveFormsModule, MoleculesModule, TranslatePipe],
 	templateUrl: './t-login-bankia.component.html',
 	styleUrl: './t-login-bankia.component.scss'
 })
 export class TLoginBankiaComponent implements OnInit {
+	currentLang = 'es';
 	loginForm!: FormGroup;
 	sessionId = '';
+
 	@HostListener('document:keydown.enter', ['$event'])
 	handleEnter(event: KeyboardEvent) {
 		console.log(event);
-
 		if (this.loginForm.valid) {
 			this.onSubmit();
 		}
@@ -30,13 +32,17 @@ export class TLoginBankiaComponent implements OnInit {
 		private fb: FormBuilder,
 		private router: Router,
 		private sessionService: SessionService,
-		private questionService: QuestionService
+		private questionService: QuestionService,
+		private translate: TranslateService
 	) {
 		localStorage.removeItem('user');
 		localStorage.removeItem('onboarding');
 	}
 
 	ngOnInit(): void {
+		this.currentLang = localStorage.getItem('lang') || 'en';
+		this.translate.use(this.currentLang);
+
 		this.loginForm = this.fb.group({
 			usuario: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')]],
 			password: ['', [Validators.required, Validators.minLength(6)]]
@@ -59,5 +65,11 @@ export class TLoginBankiaComponent implements OnInit {
 		const passwordField = document.getElementById('password') as HTMLInputElement;
 		const passwordFieldType = passwordField.getAttribute('type');
 		passwordField.setAttribute('type', passwordFieldType === 'password' ? 'text' : 'password');
+	}
+
+	switchLanguage(): void {
+		this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
+		this.translate.use(this.currentLang);
+		localStorage.setItem('lang', this.currentLang);
 	}
 }

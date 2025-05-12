@@ -1,10 +1,11 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'a-custom-input-text',
 	standalone: true,
-	imports: [],
+	imports: [TranslateModule],
 	templateUrl: './a-custom-input-text.component.html',
 	styleUrl: './a-custom-input-text.component.scss'
 })

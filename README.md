@@ -1,4 +1,4 @@
-# Poc Bankia (Bancolombia)
+# Poc Bankia (Pragma)
 
 Esta pOc fue generada en [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 Node Version: 20.16.0

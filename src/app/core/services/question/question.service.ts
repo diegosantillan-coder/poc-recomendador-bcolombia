@@ -17,17 +17,17 @@ export class QuestionService {
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero mi diagnóstico financiero'
+				prompt: 'home.modal.defaultQuestions.question1'
 			},
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero controlar mejor mis gastos'
+				prompt: 'home.modal.defaultQuestions.question2'
 			},
 			{
 				user_id: this.user()?.usuario || '',
 				session_id: this.user()?.sessionId || '',
-				prompt: 'Quiero aprender hábitos de ahorro'
+				prompt: 'home.modal.defaultQuestions.question3'
 			}
 		];
 	}
