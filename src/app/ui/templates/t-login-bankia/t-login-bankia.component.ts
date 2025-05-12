@@ -16,7 +16,7 @@ import { MoleculesModule } from '../../molecules/molecules.module';
 	styleUrl: './t-login-bankia.component.scss'
 })
 export class TLoginBankiaComponent implements OnInit {
-	currentLang = 'es';
+	currentLang = 'en';
 	loginForm!: FormGroup;
 	sessionId = '';
 

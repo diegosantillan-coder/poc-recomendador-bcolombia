@@ -49,7 +49,9 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	ngOnInit(): void {
-		this.defaultQuestion = this.questionService.getDefaultQuestions();
+		this.questionService.getDefaultQuestions().then((questions: Request[]) => {
+			this.defaultQuestion = questions;
+		});
 		this.listenerWebSocket();
 	}
 
@@ -89,6 +91,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	}
 
 	sendDefaultQuestion(question: Request): void {
+		console.log('Pregunta por defecto:', question);
 		if (question.prompt) {
 			this.welcome = false;
 			this.valueInput = question.prompt;

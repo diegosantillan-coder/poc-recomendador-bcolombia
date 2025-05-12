@@ -1,7 +1,7 @@
 {
 	"TITLE": "Welcome",
-	"GREETING": "Hello, we're glad you're here",
-	"DESCRIPTION": "To continue, log in with your username and password",
+	"GREETING": "Hello, we’re thrilled to have you here!",
+	"DESCRIPTION": "To continue, please log in with your username and password.",
 	"LABEL": {
 		"USERNAME": "Username",
 		"PASSWORD": "Password"
@@ -14,28 +14,46 @@
 		"CONTINUE": "Continue"
 	},
 	"home": {
-    "placeHolderInputChat": "Ask me a question...",
+		"placeHolderInputChat": "Ask me anything...",
 		"transactionsSubtitle": "Perform transactions",
 		"formalitiesSubtitle": "Carry out formalities",
 		"transactions": {
-			"sendMoney": "Send money",
-			"payCards": "Pay cards",
-			"payCredit": "Pay credit"
+			"sendMoney": "Send Money",
+			"payCards": "Pay Cards",
+			"payCredit": "Pay Loans"
 		},
 		"formalities": {
-			"bankStatements": "Bank statements",
-			"upcomingPayments": "Upcoming payments",
-			"faq": "Frequently asked questions"
+			"bankStatements": "Bank Statements",
+			"upcomingPayments": "Upcoming Payments",
+			"faq": "Frequently Asked Questions"
 		},
 		"modal": {
 			"greeting": "Hello! I'm LIA",
-			"help": "your AI product advisor",
+			"help": "your AI-powered financial advisor.",
 			"howCanIHelp": "How can I assist you today?",
 			"defaultQuestions": {
-				"question1": "I want my financial diagnosis",
-				"question2": "I want to better control my expenses",
-				"question3": "I want to learn saving habits"
-			}
+				"question1": " I want my financial assessment",
+				"question2": "I want better control over my expenses",
+				"question3": "I want to learn smart saving habits"
+			},
+			"typing": "Typing..."
 		}
+	},
+	"onboarding": {
+		"step1": {
+			"title": "Get Financial Insights",
+			"description": "We’re here to support you in managing your finances wisely, providing expert advice to help you improve your financial well-being every day."
+		},
+		"step2": {
+			"title": "Organize Your Finances and Control Your Expenses",
+			"description": "Save money without compromising your lifestyle by structuring your expenses and planning for the future."
+		},
+		"step3": {
+			"title": "Set and Achieve Your Financial Goals",
+			"description": "We’ll guide you every step of the way so you can accomplish everything you’ve always wanted."
+		}
+	},
+	"iaInitMessage": {
+		"tipMessage":"Remember, I'm an AI designed to keep our conversations private and confidential. No one else has access to them, so tell me whatever you need!"
 	}
 }
