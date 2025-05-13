@@ -35,9 +35,9 @@
 		@if (welcome) {
 			<div class="modal-content__welcome">
 				<div class="modal-content__greeting">
-					Hola! Soy LIA,<br />
-					tu asesora de productos IA
-					<p>¿cómo puedo ayudarte hoy?</p>
+					{{ 'home.modal.greeting' | translate }}<br />
+					{{ 'home.modal.help' | translate }}
+					<p>{{ 'home.modal.howCanIHelp' | translate }}</p>
 				</div>
 				@for (question of defaultQuestion; track $index) {
 					<a-custom-button
@@ -52,7 +52,7 @@
 				<a-card-chat [chats]="chats"></a-card-chat>
 				@if (isTyping) {
 					<div class="typing-indicator">
-						<span>Escribiendo...</span>
+						<span> {{ 'home.modal.typing' | translate }} </span>
 					</div>
 				}
 			</div>

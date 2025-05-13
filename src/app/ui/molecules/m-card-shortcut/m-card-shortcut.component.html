@@ -2,7 +2,7 @@
 	<div class="m-card-shortcut__title">{{ subTitle }}</div>
 	<div class="m-card-shortcut__container">
 		@for (option of options; track $index) {
-			<a-card-shortcut [pathIcon]="option.path" [text]="option.title"></a-card-shortcut>
+			<a-card-shortcut [pathIcon]="option.path" [text]="option.title | translate"></a-card-shortcut>
 		}
 	</div>
 </div>

@@ -1,0 +1,10 @@
+<div
+	class="language-toggle"
+	(click)="toggleLanguage()"
+	(keydown)="toggleLanguage()"
+	[class.en]="currentLang === 'en'"
+	tabindex="0"
+>
+	<div class="toggle-circle"></div>
+	<span class="label">{{ currentLang.toUpperCase() }}</span>
+</div>

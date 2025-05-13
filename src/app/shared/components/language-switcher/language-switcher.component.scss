@@ -1,0 +1,42 @@
+@import 'main';
+
+.language-toggle {
+	position: relative;
+	width: 60px;
+	height: 30px;
+	background-color: #ddd;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	padding: 2px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	user-select: none;
+
+	&.en {
+		background-color: $background-purple;
+	}
+
+	.toggle-circle {
+		width: 26px;
+		height: 26px;
+		background-color: white;
+		border-radius: 50%;
+		transition: transform 0.3s ease;
+		transform: translateX(0);
+	}
+
+	&.en .toggle-circle {
+		transform: translateX(30px);
+	}
+
+	.label {
+		position: absolute;
+		font-size: 10px;
+		font-weight: bold;
+		color: #333;
+		left: 50%;
+		transform: translateX(-50%);
+		pointer-events: none;
+	}
+}
