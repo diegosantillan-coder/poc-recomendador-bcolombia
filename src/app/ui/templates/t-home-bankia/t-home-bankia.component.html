@@ -9,11 +9,11 @@
 		<div class="t-home-bankia__operations">
 			<m-card-shortcut
 				[options]="transactions"
-				[subTitle]="'Realiza transacciones'"
+				[subTitle]="'home.transactionsSubtitle' | translate"
 			></m-card-shortcut>
 			<m-card-shortcut
 				[options]="formalities"
-				[subTitle]="'Realiza trámites'"
+				[subTitle]="'home.formalitiesSubtitle' | translate"
 			></m-card-shortcut>
 		</div>
 
@@ -24,12 +24,7 @@
 			tabindex="0"
 		>
 			<div class="t-home-bankia__circle t-home-bankia__circle--purple"></div>
-			<img
-				class="t-home-bankia__image"
-				src="/images/lia.svg"
-				alt=""
-				loading="lazy"
-			/>
+			<img class="t-home-bankia__image" src="/images/lia.svg" alt="" loading="lazy" />
 		</div>
 	</div>
 </div>

@@ -12,7 +12,6 @@ export class MScreenComponent implements OnInit {
 	private readonly router = inject(Router);
 
 	ngOnInit(): void {
-		console.log('Hola desde Bankia');
 		this.goToLogin();
 	}
 

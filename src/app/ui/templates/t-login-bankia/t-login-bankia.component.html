@@ -1,50 +1,49 @@
 <div class="t-login-bankia">
 	<div>
-		<a-title-bankia [text]="'BankIA'"></a-title-bankia>
+		<a-title-bankia [text]="'TITLE' | translate"></a-title-bankia>
 	</div>
 	<div>
 		<m-card-info
-			[title]="'Hola, nos alegra mucho que estés aquí'"
-			[description]="
-				'Para continuar, inicia sesión con tu usuario y contraseña'
-			"
+			[title]="'GREETING' | translate"
+			[description]="'DESCRIPTION' | translate"
 		></m-card-info>
 	</div>
 	<div>
 		<form [formGroup]="loginForm" class="t-login-bankia__form">
 			<div class="form-group">
-				<label for="usuario">Usuario</label>
+				<label for="usuario">{{ 'LABEL.USERNAME' | translate }}</label>
 				<input
 					id="usuario"
 					formControlName="usuario"
 					type="text"
-					placeholder="Ingresa tu usuario"
+					[placeholder]="'PLACEHOLDER.USERNAME' | translate"
 				/>
 			</div>
 
 			<div class="form-group">
-				<label for="password">Contraseña</label>
+				<label for="password">{{ 'LABEL.PASSWORD' | translate }}</label>
 				<div class="password-wrapper">
 					<input
 						id="password"
 						formControlName="password"
 						type="password"
-						placeholder="Ingresa tu contraseña"
+						[placeholder]="'PLACEHOLDER.PASSWORD' | translate"
 					/>
 					<span
 						class="toggle-password"
 						(click)="togglePasswordVisibility()"
 						(keydown)="togglePasswordVisibility()"
 						tabindex="0"
-						><i class="eye-icon"></i
-					></span>
+					>
+						<i class="eye-icon"></i>
+					</span>
 				</div>
 			</div>
 		</form>
 	</div>
 	<div class="t-login-bankia__button">
 		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
-			Continuar
+			{{ 'BUTTON.CONTINUE' | translate }}
 		</button>
 	</div>
 </div>

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { OnboardingService } from './onboarding.service';
+import { WsAgentService } from './ws-agent.service';
 
-describe('OnboardingService', () => {
-	let service: OnboardingService;
+describe('WsAgentService', () => {
+	let service: WsAgentService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({});
-		service = TestBed.inject(OnboardingService);
+		service = TestBed.inject(WsAgentService);
 	});
 
 	it('should be created', () => {

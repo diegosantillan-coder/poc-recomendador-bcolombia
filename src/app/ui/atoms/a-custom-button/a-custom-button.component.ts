@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
 	selector: 'a-custom-button',
 	standalone: true,
-	imports: [],
+	imports: [TranslateModule],
 	templateUrl: './a-custom-button.component.html',
 	styleUrl: './a-custom-button.component.scss'
 })

@@ -2,6 +2,18 @@
 .home {
 	height: 90vh;
 	padding: 1.5rem;
+
+	&__container {
+		display: grid;
+	}
+
+	&__language-switcher {
+		margin-top: 1.5rem;
+		justify-self: end;
+		margin-right: 2rem;
+		margin-bottom: 1rem;
+	}
+
 	&__footer {
 		padding: 1.5rem;
 		background-color: $background-white;

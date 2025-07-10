@@ -3,12 +3,7 @@
 }
 <div class="t-onboarding">
 	<header class="t-onboarding__header">
-		<div
-			class="t-onboarding__close"
-			(click)="goHome()"
-			(keydown)="goHome()"
-			tabindex="0"
-		>
+		<div class="t-onboarding__close" (click)="goHome()" (keydown)="goHome()" tabindex="0">
 			<a-logo [src]="'images/close.svg'"></a-logo>
 		</div>
 		<div>
@@ -29,5 +24,5 @@
 	<div>
 		<m-card-info [title]="title" [description]="description"></m-card-info>
 	</div>
-	<a-button [text]="'Continuar'" (buttonClick)="goNextStep()"></a-button>
+	<a-button [text]="'BUTTON.CONTINUE' | translate" (buttonClick)="goNextStep()"></a-button>
 </div>

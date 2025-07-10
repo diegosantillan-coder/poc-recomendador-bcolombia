@@ -1,9 +1,4 @@
-import {
-	HttpClient,
-	HttpErrorResponse,
-	HttpHeaders,
-	HttpParams
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { OptionsHttp } from '@core/models/options-http.interface';
 import { catchError, Observable, throwError, timeout } from 'rxjs';
@@ -42,7 +37,7 @@ export class HttpService {
 	}
 
 	httpPOST<T, R>(url: string, body: T, opciones?: OptionsHttp): Observable<R> {
-		const timeoutValue = opciones?.timeout ?? 9000;
+		const timeoutValue = opciones?.timeout ?? 29000;
 		return this.http
 			.post<R>(url, body, opciones)
 			.pipe(timeout(timeoutValue), catchError(this.handleError));
@@ -62,8 +57,6 @@ export class HttpService {
 
 	private handleError(error: HttpErrorResponse) {
 		console.error('Error:', error);
-		return throwError(
-			'Ocurrió un error; por favor, intente de nuevo más tarde.'
-		);
+		return throwError('Ocurrió un error; por favor, intente de nuevo más tarde.');
 	}
 }

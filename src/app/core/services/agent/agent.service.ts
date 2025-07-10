@@ -9,9 +9,7 @@ import { HttpService } from '../http/http.service';
 	providedIn: 'root'
 })
 export class AgentService extends HttpService {
-	async getResponseAgentAsync(
-		question: QuestionRequest
-	): Promise<AgentResponse> {
+	async getResponseAgentAsync(question: QuestionRequest): Promise<AgentResponse> {
 		this.addHeader('x-api-key', 'o6HDjcuRP61vHwEgmq0Fl41Bk9sRX8PB9L6TIjfl');
 		const options: OptionsHttp = {
 			headers: this.getHeaders()

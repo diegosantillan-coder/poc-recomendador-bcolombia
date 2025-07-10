@@ -6,12 +6,7 @@ import { TOnboardingComponent } from './t-onboarding/t-onboarding.component';
 
 @NgModule({
 	declarations: [],
-	imports: [
-		CommonModule,
-		TLoginBankiaComponent,
-		THomeBankiaComponent,
-		TOnboardingComponent
-	],
+	imports: [CommonModule, TLoginBankiaComponent, THomeBankiaComponent, TOnboardingComponent],
 	exports: [TLoginBankiaComponent, THomeBankiaComponent, TOnboardingComponent]
 })
 export class TemplatesModule {}

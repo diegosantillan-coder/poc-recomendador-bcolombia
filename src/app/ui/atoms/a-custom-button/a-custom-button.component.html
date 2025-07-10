@@ -1,8 +1,4 @@
-<button
-	class="a-custom-button"
-	(click)="handleClick()"
-	(keydown)="handleClick()"
->
-	{{ text }}
+<button class="a-custom-button" (click)="handleClick()" (keydown)="handleClick()">
+	{{ text | translate }}
 	<img src="/images/chevron-right.svg" alt="" tabindex="0" />
 </button>

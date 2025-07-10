@@ -7,7 +7,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 	imports: [NgClass],
 	templateUrl: './a-card-chat.component.html',
 	styleUrl: './a-card-chat.component.scss',
-  encapsulation: ViewEncapsulation.None, // O encapsulation: ViewEncapsulation.ShadowDom
+	encapsulation: ViewEncapsulation.None // O encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ACardChatComponent {
 	@Input() chats: { text: string; isUser: boolean }[] = [];

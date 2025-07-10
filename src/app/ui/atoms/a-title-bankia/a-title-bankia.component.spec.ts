@@ -3,21 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ATitleBankiaComponent } from './a-title-bankia.component';
 
 describe('ATitleBankiaComponent', () => {
-  let component: ATitleBankiaComponent;
-  let fixture: ComponentFixture<ATitleBankiaComponent>;
+	let component: ATitleBankiaComponent;
+	let fixture: ComponentFixture<ATitleBankiaComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ATitleBankiaComponent]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [ATitleBankiaComponent]
+		}).compileComponents();
 
-    fixture = TestBed.createComponent(ATitleBankiaComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ATitleBankiaComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
