@@ -1,44 +1,47 @@
 @import 'main';
+
 .m-screen {
-	background: linear-gradient(
-		110.68deg,
-		#5452f7 1.52%,
-		#6429cd 26.95%,
-		#b100a3 138.13%
-	);
-	height: 100vh; /* Ajusta la altura según sea necesario */
-	width: 100%; /* Ajusta el ancho según sea necesario */
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+	background: linear-gradient(135deg, #200020 0%, #6f2fd3 54.97%);
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
 
 	&__container {
+		z-index: 5;
+		display: grid;
+		place-content: center;
+		height: 100%;
+	}
+
+	&__title {
 		font-family: 'Poppins', sans-serif;
 		font-weight: 600;
-		font-size: 60px;
-		line-height: 60px;
+		font-size: 80px;
+		line-height: 1em;
 		color: $text-white;
+		text-align: center;
+		width: 173px;
+		height: 80px;
+		margin-bottom: 0;
 	}
 
 	&__subtitle {
 		display: flex;
+		align-items: center;
 		justify-content: center;
-		column-gap: 3px;
+		gap: 6px;
+		width: 152px;
+		height: 40px;
+		margin-top: -2px;
+		margin-left: 11px;
 	}
 
-	&__image-by {
-		display: flex;
-		justify-content: center;
-		padding-bottom: 1rem;
-	}
-
-	&__line {
-		position: absolute;
-		top: 80%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		height: 30%;
-		border: none;
-		border-left: 1px solid $text-white;
+	&__pragma-logo {
+		width: 126px;
+		height: 36px;
+		object-fit: contain;
 	}
 }
