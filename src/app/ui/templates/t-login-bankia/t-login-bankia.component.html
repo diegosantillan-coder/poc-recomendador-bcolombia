@@ -1,14 +1,15 @@
 <div class="t-login-bankia">
-	<div>
-		<a-title-bankia [text]="'TITLE' | translate"></a-title-bankia>
+	<!-- Logo Section -->
+	<div class="t-login-bankia__logo">
+		<h1 class="t-login-bankia__title">WIZI</h1>
+		<div class="t-login-bankia__brand">
+			<img class="m-screen__image-by" src="/images/by.svg" alt="" />
+			<img src="/images/pragma.svg" alt="" />
+		</div>
 	</div>
-	<div>
-		<m-card-info
-			[title]="'GREETING' | translate"
-			[description]="'DESCRIPTION' | translate"
-		></m-card-info>
-	</div>
-	<div>
+
+	<!-- Form Section -->
+	<div class="t-login-bankia__content">
 		<form [formGroup]="loginForm" class="t-login-bankia__form">
 			<div class="form-group">
 				<label for="usuario">{{ 'LABEL.USERNAME' | translate }}</label>
@@ -39,11 +40,12 @@
 					</span>
 				</div>
 			</div>
+
+			<div class="t-login-bankia__button">
+				<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
+					{{ 'BUTTON.CONTINUE' | translate }}
+				</button>
+			</div>
 		</form>
-	</div>
-	<div class="t-login-bankia__button">
-		<button type="button" [disabled]="loginForm.invalid" (click)="onSubmit()">
-			{{ 'BUTTON.CONTINUE' | translate }}
-		</button>
 	</div>
 </div>
