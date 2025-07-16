@@ -15,17 +15,18 @@
 	},
 	"home": {
     "placeHolderInputChat": "Hazme una pregunta ...",
-		"transactionsSubtitle": "Realiza transacciones",
-		"formalitiesSubtitle": "Realiza trámites",
+		"transactionsSubtitle": "Transacciones",
+		"formalitiesSubtitle": "Compras",
+		"servicesSubtitle": "Servicios",
 		"transactions": {
-			"sendMoney": "Enviar dinero",
-			"payCards": "Pagar tarjetas",
-			"payCredit": "Pagar crédito"
+			"sendMoney": "Movimientos",
+			"payCards": "Tarjetas",
+			"payCredit": "Créditos"
 		},
 		"formalities": {
-			"bankStatements": "Extractos bancarios",
-			"upcomingPayments": "Próximos pagos",
-			"faq": "Preguntas frecuentes"
+			"bankStatements": "Tiendas",
+			"upcomingPayments": "Restaurantes",
+			"faq": "Eventos"
 		},
 		"modal": {
 			"greeting": "¡Hola! Soy LIA",
