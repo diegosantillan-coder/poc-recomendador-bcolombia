@@ -40,7 +40,7 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	user: UserBankia = this.userService.getUser();
 	messages$!: Observable<string>; // Observable para los mensajes
 	connection = this.wsAgentService.connect(
-		'wss://r5lnx0hv37.execute-api.us-east-1.amazonaws.com/dev/'
+		'wss://59wkcz5h2d.execute-api.us-east-1.amazonaws.com/dev/'
 	);
 
 	ngOnDestroy(): void {

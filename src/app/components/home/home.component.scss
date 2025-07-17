@@ -15,16 +15,26 @@
 	}
 
 	&__footer {
-		padding: 1.5rem;
+		position: fixed;
+		top: 92%;
 	}
 
 	@include from($laptop) {
 		max-width: 50%;
 		margin: auto;
 		height: 91vh;
+
+		&__footer {
+			right: 17%;
+		}
 	}
 
 	@include from($laptop-large) {
 		max-width: 35%;
+
+		&__footer {
+			right: 30%;
+			top: 91%;
+		}
 	}
 }

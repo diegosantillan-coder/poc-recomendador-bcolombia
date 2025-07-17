@@ -44,7 +44,7 @@ export class TLoginBankiaComponent implements OnInit {
 		this.translate.use(this.currentLang);
 
 		this.loginForm = this.fb.group({
-			usuario: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')]],
+			usuario: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9- ]+$')]],
 			password: ['', [Validators.required, Validators.minLength(6)]]
 		});
 
