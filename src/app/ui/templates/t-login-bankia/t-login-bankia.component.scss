@@ -54,8 +54,7 @@
 	}
 
 	&__content {
-		width: 50%;
-		margin: auto;
+		width: 100%;
 		padding-bottom: 20px;
 	}
 
@@ -92,6 +91,14 @@
 				background: #ccc;
 				cursor: not-allowed;
 			}
+		}
+	}
+
+	@include from($laptop) {
+		&__content {
+			width: 50%;
+			margin: auto;
+			padding-bottom: 20px;
 		}
 	}
 }

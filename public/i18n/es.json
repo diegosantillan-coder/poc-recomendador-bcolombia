@@ -15,7 +15,7 @@
 		"ONBOARDING_CONTINUE": "Continuar"
 	},
 	"home": {
-    "placeHolderInputChat": "Hazme una pregunta ...",
+    "placeHolderInputChat": "Preguntame lo que quieras",
 		"transactionsSubtitle": "Transacciones",
 		"formalitiesSubtitle": "Compras",
 		"servicesSubtitle": "Servicios",
@@ -30,13 +30,13 @@
 			"faq": "Eventos"
 		},
 		"modal": {
-			"greeting": "¡Hola! Soy LIA",
-			"help": "tu asesora de productos IA",
-			"howCanIHelp": "¿cómo puedo ayudarte hoy?",
+			"greeting": "Soy WIZI y estoy aquí para ayudarte a tener el control de tu plata sin enredos",
+			"help": "",
+			"howCanIHelp": "💬 Prueba con cosas como:",
 			"defaultQuestions": {
-				"question1": "Quiero mi diagnóstico financiero",
-				"question2": "Quiero controlar mejor mis gastos",
-				"question3": "Quiero aprender hábitos de ahorro"
+				"question1": "¿Cómo va mi plata este mes?",
+				"question2": "¿Qué puedo mejorar en mi forma de gastar?",
+				"question3": "Muestrame beneficios con los comercios aliados"
 			},
 		"typing": "Escribiendo..."
 		}

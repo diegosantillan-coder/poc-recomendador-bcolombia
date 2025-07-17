@@ -2,7 +2,7 @@ import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '@core/services/modal/modal.service';
 import { OnboardingService } from '@core/services/onboarding/onboarding.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { AtomsModule } from '@ui/atoms/atoms.module';
 import { MoleculesModule } from '@ui/molecules/molecules.module';
 import { TModalComponent } from '../t-modal/t-modal.component';
@@ -10,7 +10,7 @@ import { TModalComponent } from '../t-modal/t-modal.component';
 @Component({
 	selector: 't-onboarding',
 	standalone: true,
-	imports: [AtomsModule, MoleculesModule, TModalComponent, TranslateModule],
+	imports: [AtomsModule, MoleculesModule, TModalComponent, TranslatePipe],
 	templateUrl: './t-onboarding.component.html',
 	styleUrl: './t-onboarding.component.scss'
 })
