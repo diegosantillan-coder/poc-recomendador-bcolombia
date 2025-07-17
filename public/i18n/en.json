@@ -11,30 +11,32 @@
 		"PASSWORD": "Enter your password"
 	},
 	"BUTTON": {
-		"CONTINUE": "Continue"
+		"CONTINUE": "Continue",
+		"ONBOARDING_CONTINUE": "Continue"
 	},
 	"home": {
-		"placeHolderInputChat": "Ask me anything...",
-		"transactionsSubtitle": "Perform transactions",
-		"formalitiesSubtitle": "Carry out formalities",
+		"placeHolderInputChat": "Ask me whatever you want",
+		"transactionsSubtitle": "Transactions",
+		"formalitiesSubtitle": "Shopping",
+		"servicesSubtitle": "Services",
 		"transactions": {
-			"sendMoney": "Send Money",
-			"payCards": "Pay Cards",
-			"payCredit": "Pay Loans"
+			"sendMoney": "Movements",
+			"payCards": "Cards",
+			"payCredit": "Loans"
 		},
 		"formalities": {
-			"bankStatements": "Bank Statements",
-			"upcomingPayments": "Upcoming Payments",
-			"faq": "Frequently Asked Questions"
+			"bankStatements": "Stores",
+			"upcomingPayments": "Restaurants",
+			"faq": "Events"
 		},
 		"modal": {
-			"greeting": "Hello! I'm LIA",
-			"help": "your AI-powered financial advisor.",
-			"howCanIHelp": "How can I assist you today?",
+			"greeting": "I'm WIZI and I'm here to help you keep control of your money without any hassle.",
+			"help": "",
+			"howCanIHelp": "💬 Try things like:",
 			"defaultQuestions": {
-				"question1": " I want my financial assessment",
-				"question2": "I want better control over my expenses",
-				"question3": "I want to learn smart saving habits"
+				"question1": "How is my money going this month?",
+				"question2": "What can I improve in my spending habits?",
+				"question3": "Show me benefits with allied businesses"
 			},
 			"typing": "Typing..."
 		}

@@ -4,25 +4,28 @@
 <div class="t-onboarding">
 	<header class="t-onboarding__header">
 		<div class="t-onboarding__close" (click)="goHome()" (keydown)="goHome()" tabindex="0">
-			<a-logo [src]="'images/close.svg'"></a-logo>
+			<a-logo [src]="'images/close-white.svg'"></a-logo>
 		</div>
-		<div>
-			<a-title-bankia [text]="'BankIA'"></a-title-bankia>
-		</div>
-		<div
-			class="t-onboarding__header-next"
-			(click)="goNextStep()"
-			(keydown)="goNextStep()"
-			tabindex="0"
-		>
+		<div class="t-onboarding__header-title">WIZI</div>
+		<div class="t-onboarding__next" (click)="goNextStep()" (keydown)="goNextStep()" tabindex="0">
 			<a-logo [src]="'images/arrow-right.svg'"></a-logo>
 		</div>
 	</header>
-	<div class="t-onboarding__image">
-		<a-logo [src]="pathImage"></a-logo>
+
+	<div class="t-onboarding__content">
+		<div class="t-onboarding__image">
+			<a-logo [src]="pathImage"></a-logo>
+		</div>
+
+		<div class="t-onboarding__text">
+			<div class="t-onboarding__text-title">{{ title }}</div>
+			<div class="t-onboarding__text-description">{{ description }}</div>
+		</div>
 	</div>
-	<div>
-		<m-card-info [title]="title" [description]="description"></m-card-info>
+
+	<div class="t-onboarding__button">
+		<button (click)="goNextStep()">
+			<span>{{ 'BUTTON.ONBOARDING_CONTINUE' | translate }}</span>
+		</button>
 	</div>
-	<a-button [text]="'BUTTON.CONTINUE' | translate" (buttonClick)="goNextStep()"></a-button>
 </div>

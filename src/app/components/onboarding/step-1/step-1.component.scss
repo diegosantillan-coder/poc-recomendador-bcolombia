@@ -1,7 +1,10 @@
 @import 'main';
+
 .step-1 {
 	height: 100vh;
-	padding: 1.5rem;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
 
 	@include from($laptop) {
 		max-width: 50%;

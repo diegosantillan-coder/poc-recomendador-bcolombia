@@ -21,12 +21,18 @@ export class THomeBankiaComponent {
 	@Input() showModal = false;
 
 	transactions: NavBar[] = [
-		{ id: 1, title: 'home.transactions.sendMoney', path: '/icons/avion.svg' },
-		{ id: 2, title: 'home.transactions.payCards', path: '/icons/tarjeta.svg' },
-		{ id: 3, title: 'home.transactions.payCredit', path: '/icons/dolar.svg' }
+		{ id: 1, title: 'home.transactions.sendMoney', path: '/icons/currency_exchange.svg' },
+		{ id: 2, title: 'home.transactions.payCards', path: '/icons/credit-card-icon.svg' },
+		{ id: 3, title: 'home.transactions.payCredit', path: '/icons/money_bag.svg' }
 	];
 
 	formalities: NavBar[] = [
+		{ id: 1, title: 'home.formalities.bankStatements', path: '/icons/local_mall.svg' },
+		{ id: 2, title: 'home.formalities.upcomingPayments', path: '/icons/hand_meal.svg' },
+		{ id: 3, title: 'home.formalities.faq', path: '/icons/comedy_mask.svg' }
+	];
+
+	services: NavBar[] = [
 		{ id: 1, title: 'home.formalities.bankStatements', path: '/icons/documento.svg' },
 		{ id: 2, title: 'home.formalities.upcomingPayments', path: '/icons/calendario.svg' },
 		{ id: 3, title: 'home.formalities.faq', path: '/icons/mensaje.svg' }

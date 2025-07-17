@@ -1,9 +1,15 @@
 <!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
 <div class="modal-overlay" (click)="handleClose()" (keydown)="handleClose()" tabindex="0"></div>
 
-<div class="modal-content">
+<div
+	class="modal-content"
+	[ngClass]="{
+		'modal-content--default': welcome,
+		'modal-content--top': !welcome
+	}"
+>
 	<div class="modal-content__borde">
-		<img class="modal-content__borde-img" src="/images/background-lia.svg" alt="" loading="lazy" />
+		<img class="modal-content__borde-img" src="/images/header-wizi.png" alt="" loading="lazy" />
 	</div>
 	<div
 		[ngClass]="{
@@ -36,7 +42,7 @@
 			<div class="modal-content__welcome">
 				<div class="modal-content__greeting">
 					{{ 'home.modal.greeting' | translate }}<br />
-					{{ 'home.modal.help' | translate }}
+					<br />
 					<p>{{ 'home.modal.howCanIHelp' | translate }}</p>
 				</div>
 				@for (question of defaultQuestion; track $index) {
@@ -48,7 +54,7 @@
 			</div>
 		} @else {
 			<div class="modal-content__chat-ia">
-				<a-card-welcome class="modal-content__welcome"></a-card-welcome>
+				<!-- <a-card-welcome class="modal-content__welcome"></a-card-welcome> -->
 				<a-card-chat [chats]="chats"></a-card-chat>
 				@if (isTyping) {
 					<div class="typing-indicator">
@@ -70,7 +76,7 @@
 		></a-custom-input-text>
 		<img
 			class="modal-content__question-button"
-			src="/images/send.svg"
+			src="/icons/send-question.svg"
 			alt=""
 			(click)="sendQuestion()"
 			(keydown.enter)="sendQuestion()"

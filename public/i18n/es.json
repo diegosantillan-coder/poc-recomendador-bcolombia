@@ -11,46 +11,48 @@
 		"PASSWORD": "Ingresa tu contraseña"
 	},
 	"BUTTON": {
-		"CONTINUE": "Entra"
+		"CONTINUE": "Entra",
+		"ONBOARDING_CONTINUE": "Continuar"
 	},
 	"home": {
-    "placeHolderInputChat": "Hazme una pregunta ...",
-		"transactionsSubtitle": "Realiza transacciones",
-		"formalitiesSubtitle": "Realiza trámites",
+    "placeHolderInputChat": "Preguntame lo que quieras",
+		"transactionsSubtitle": "Transacciones",
+		"formalitiesSubtitle": "Compras",
+		"servicesSubtitle": "Servicios",
 		"transactions": {
-			"sendMoney": "Enviar dinero",
-			"payCards": "Pagar tarjetas",
-			"payCredit": "Pagar crédito"
+			"sendMoney": "Movimientos",
+			"payCards": "Tarjetas",
+			"payCredit": "Créditos"
 		},
 		"formalities": {
-			"bankStatements": "Extractos bancarios",
-			"upcomingPayments": "Próximos pagos",
-			"faq": "Preguntas frecuentes"
+			"bankStatements": "Tiendas",
+			"upcomingPayments": "Restaurantes",
+			"faq": "Eventos"
 		},
 		"modal": {
-			"greeting": "¡Hola! Soy LIA",
-			"help": "tu asesora de productos IA",
-			"howCanIHelp": "¿cómo puedo ayudarte hoy?",
+			"greeting": "Soy WIZI y estoy aquí para ayudarte a tener el control de tu plata sin enredos",
+			"help": "",
+			"howCanIHelp": "💬 Prueba con cosas como:",
 			"defaultQuestions": {
-				"question1": "Quiero mi diagnóstico financiero",
-				"question2": "Quiero controlar mejor mis gastos",
-				"question3": "Quiero aprender hábitos de ahorro"
+				"question1": "¿Cómo va mi plata este mes?",
+				"question2": "¿Qué puedo mejorar en mi forma de gastar?",
+				"question3": "Muestrame beneficios con los comercios aliados"
 			},
 		"typing": "Escribiendo..."
 		}
 	},
 	"onboarding": {
 		"step1": {
-			"title": "Realiza consultas financieras.",
-			"description": "Te acompañamos en el manejo saludable de tus finanzas y te damos consejos para que mejores en tu día a día."
+			"title": "Controla tus gastos y alcanza tus metas:",
+			"description": "Te ayudo a revisar tus movimientos, metas y hasta esos cobros que se te pasan por alto 👀 Aquí tienes todo para hacerlo fácil: nómina, score financiero y más."
 		},
 		"step2": {
-			"title": "Organiza tus finanzas y controla tus gastos.",
-			"description": "Así podrás ahorrar sin sacrificar tu estilo de vida, organizando tus gastos y planeando tu futuro."
+			"title": "Realiza consultas financieras:",
+			"description": "¿Quieres saber en qué estás gastando más? ¿O cómo podrías ahorrar sin matarte? Preguntame lo que quieras y te doy tips para mejorar tus hábitos financieros. "
 		},
 		"step3": {
-			"title": "Define y alcanza tus metas financieras.",
-			"description": "Te acompañamos en cada paso, para que logrés todo eso que siempre has querido."
+			"title": "Organiza tus finanzas y controla tus gastos:",
+			"description": "Si quieres pagar todo desde aquí yo te acompaño, sin enredos y con beneficios de nuestros comercios aliados para que te rinda la plata."
 		}
 	},
 		"iaInitMessage": {

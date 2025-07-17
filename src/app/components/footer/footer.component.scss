@@ -5,10 +5,52 @@
 	background-color: $background-white;
 	gap: 2rem;
 	justify-items: center;
+	align-items: center;
 	border-radius: 5px;
 
 	@include from($laptop) {
 		max-width: 35%;
 		margin: auto;
+	}
+}
+
+@import 'main';
+.a-card-dollar {
+	display: grid;
+	width: 60px;
+	height: 66px;
+	border-radius: 8px;
+	border: 1px solid $border-gray;
+	background-color: $background-purple-light;
+	font-family: 'Poppins', sans-serif;
+	justify-items: center;
+	align-items: center;
+	padding: 1rem;
+
+	&__image {
+		width: 25px;
+		height: 25px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 30px;
+		text-align: center;
+	}
+
+	@include from($tablet) {
+		width: 120px;
+		height: 120px;
+
+		&__image {
+			width: auto;
+			height: auto;
+		}
+
+		&__text {
+			font-weight: 400;
+			font-size: 16px;
+		}
 	}
 }

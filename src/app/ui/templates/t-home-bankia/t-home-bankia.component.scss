@@ -8,21 +8,22 @@
 	}
 
 	&__credit-card {
-		width: 200px;
+		width: 300px;
 		height: 200px;
 		margin: auto;
 	}
 
 	&__operations {
 		display: grid;
-		gap: 1rem;
+		gap: 3rem;
+		z-index: -1;
 	}
 
 	&__container-image {
 		margin: 0 auto;
 		position: fixed;
-		right: 14%;
-		bottom: 25%;
+		right: 5%;
+		bottom: 8%;
 		display: inline-block;
 		z-index: 0;
 		width: 100px;
