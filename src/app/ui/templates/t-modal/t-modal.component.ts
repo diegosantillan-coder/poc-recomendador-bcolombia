@@ -10,6 +10,7 @@ import {
 	Output,
 	ViewChild
 } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { QuestionRequest, Request } from '@core/interfaces/question.interface';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { AgentService } from '@core/services/agent/agent.service';
@@ -20,6 +21,7 @@ import { WsAgentService } from '@core/services/wsAgent/ws-agent.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ACustomInputTextComponent } from '@ui/atoms/a-custom-input-text/a-custom-input-text.component';
 import { AtomsModule } from '@ui/atoms/atoms.module';
+import MarkdownIt from 'markdown-it';
 import { Observable } from 'rxjs';
 import { ACardChatComponent } from '../../atoms/a-card-chat/a-card-chat.component';
 
@@ -36,6 +38,8 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 	private readonly userService = inject(UserService);
 	private readonly questionService = inject(QuestionService);
 	private readonly formatTextService = inject(TextService);
+	private readonly sanitizer: DomSanitizer = inject(DomSanitizer);
+	private md = new MarkdownIt();
 
 	user: UserBankia = this.userService.getUser();
 	messages$!: Observable<string>; // Observable para los mensajes
@@ -166,15 +170,15 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	private handleWebSocketMessage(
+	private async handleWebSocketMessage(
 		message: string,
 		timeoutDuration: number,
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		inactivityTimeout: any
-	): void {
+	): Promise<void> {
 		this.reiniciarTemporizador(timeoutDuration, inactivityTimeout);
 		this.updateChatList();
-		this.updateLastChatMessage(message);
+		await this.updateLastChatMessage(message);
 		setTimeout(() => this.scrollToBottom(), 0);
 	}
 
@@ -185,9 +189,12 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		}
 	}
 
-	private updateLastChatMessage(message: string): void {
-		const formattedMessage = this.formatMessageAsList(message);
-		this.chats[this.chats.length - 1].text = formattedMessage;
+	private async updateLastChatMessage(message: string): Promise<void> {
+		const html = this.md.render(message);
+		const formattedHtml = this.formatMessageAsList(html);
+		this.chats[this.chats.length - 1].text = this.sanitizer.bypassSecurityTrustHtml(
+			formattedHtml
+		) as string;
 	}
 
 	listenerWebSocket(): void {
@@ -199,7 +206,9 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 
 		this.wsAgentService.messages$.subscribe({
 			next: (message: string) =>
-				this.handleWebSocketMessage(message, timeoutDuration, inactivityTimeout),
+				this.handleWebSocketMessage(message, timeoutDuration, inactivityTimeout).catch(
+					console.error
+				),
 			error: (error) => this.handleWebSocketError(error)
 		});
 
