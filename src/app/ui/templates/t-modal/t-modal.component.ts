@@ -11,7 +11,7 @@ import {
 	ViewChild
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { QuestionRequest, Request } from '@core/interfaces/question.interface';
+import { Request } from '@core/interfaces/question.interface';
 import { UserBankia } from '@core/interfaces/user-bankia.interface';
 import { AgentService } from '@core/services/agent/agent.service';
 import { QuestionService } from '@core/services/question/question.service';
@@ -242,39 +242,5 @@ export class TModalComponent implements OnInit, AfterViewInit, OnDestroy {
 		const lines = message.split('\n').filter((line) => line.trim() !== '');
 		const listItems = lines.map((line) => `<li>${line}</li>`).join('');
 		return `<ul>${listItems}</ul>`; // Encerrar en un <ul>
-	}
-
-	//Agente virtual depreciado por el uso de WebSocket
-	async askingTheAgent(request: QuestionRequest): Promise<void> {
-		this.isInputEmpty = false;
-		this.isDisableInput = true;
-		this.isTyping = true;
-
-		try {
-			const response = await this.agentService.getResponseAgentAsync(request);
-			const answer = this.formatTextService.formatText(response.agent_answer);
-			const answerLinkFormat = this.formatTextService.generateLinkHtml(answer);
-			if (response.agent_answer) {
-				this.chats.push({
-					text: answerLinkFormat,
-					isUser: false
-				});
-			}
-			this.isDisableInput = false;
-			this.isTyping = false;
-			this.tryFocusInput();
-			setTimeout(() => this.scrollToBottom(), 0);
-		} catch (error) {
-			console.error('Error al obtener la respuesta del agente:', error);
-
-			this.isDisableInput = false;
-			this.isTyping = false;
-			this.chats.push({
-				text: 'Hubo un error al procesar la solicitud. Inténtalo de nuevo.',
-				isUser: false
-			});
-			this.tryFocusInput();
-			setTimeout(() => this.scrollToBottom(), 0);
-		}
 	}
 }

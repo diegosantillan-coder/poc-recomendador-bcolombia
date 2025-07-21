@@ -33,9 +33,9 @@ export class THomeBankiaComponent {
 	];
 
 	services: NavBar[] = [
-		{ id: 1, title: 'home.formalities.bankStatements', path: '/icons/documento.svg' },
-		{ id: 2, title: 'home.formalities.upcomingPayments', path: '/icons/calendario.svg' },
-		{ id: 3, title: 'home.formalities.faq', path: '/icons/mensaje.svg' }
+		{ id: 1, title: 'home.events.payments', path: '/icons/documento.svg' },
+		{ id: 2, title: 'home.events.history', path: '/icons/calendario.svg' },
+		{ id: 3, title: 'home.events.help', path: '/icons/mensaje.svg' }
 	];
 
 	openModal(): void {

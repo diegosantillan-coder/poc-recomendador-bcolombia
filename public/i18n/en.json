@@ -29,6 +29,11 @@
 			"upcomingPayments": "Restaurants",
 			"faq": "Events"
 		},
+		"events": {
+			"payments": "Payments",
+			"history": "History",
+			"help": "Help"
+		},
 		"modal": {
 			"greeting": "I'm WIZI and I'm here to help you keep control of your money without any hassle.",
 			"help": "",
@@ -56,6 +61,6 @@
 		}
 	},
 	"iaInitMessage": {
-		"tipMessage":"Remember, I'm an AI designed to keep our conversations private and confidential. No one else has access to them, so tell me whatever you need!"
+		"tipMessage": "Remember, I'm an AI designed to keep our conversations private and confidential. No one else has access to them, so tell me whatever you need!"
 	}
 }

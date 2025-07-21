@@ -1,6 +1,6 @@
 @import 'main';
 .home {
-	height: 90vh;
+	height: 110vh;
 	padding: 1.5rem;
 
 	&__container {
@@ -22,7 +22,7 @@
 	@include from($laptop) {
 		max-width: 50%;
 		margin: auto;
-		height: 91vh;
+		height: 120vh;
 
 		&__footer {
 			right: 17%;

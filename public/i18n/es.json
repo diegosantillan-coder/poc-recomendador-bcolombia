@@ -15,7 +15,7 @@
 		"ONBOARDING_CONTINUE": "Continuar"
 	},
 	"home": {
-    "placeHolderInputChat": "Preguntame lo que quieras",
+		"placeHolderInputChat": "Preguntame lo que quieras",
 		"transactionsSubtitle": "Transacciones",
 		"formalitiesSubtitle": "Compras",
 		"servicesSubtitle": "Servicios",
@@ -23,6 +23,11 @@
 			"sendMoney": "Movimientos",
 			"payCards": "Tarjetas",
 			"payCredit": "Créditos"
+		},
+		"events": {
+			"payments": "Pagos",
+			"history": "Historial",
+			"help": "Ayuda"
 		},
 		"formalities": {
 			"bankStatements": "Tiendas",
@@ -38,7 +43,7 @@
 				"question2": "¿Qué puedo mejorar en mi forma de gastar?",
 				"question3": "Muestrame beneficios con los comercios aliados"
 			},
-		"typing": "Escribiendo..."
+			"typing": "Escribiendo..."
 		}
 	},
 	"onboarding": {
@@ -55,7 +60,7 @@
 			"description": "Si quieres pagar todo desde aquí yo te acompaño, sin enredos y con beneficios de nuestros comercios aliados para que te rinda la plata."
 		}
 	},
-		"iaInitMessage": {
+	"iaInitMessage": {
 		"tipMessage": "Recuerda que soy una IA diseñada para mantener la privacidad y confidencialidad de nuestras conversaciones. Nadie más tiene acceso a ellas, ¡así que cuéntame lo que necesites!"
 	}
 }

@@ -12,7 +12,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class AppComponent {
 	title = 'poc-asistente-soi';
 
-	currentLang = 'en';
+	currentLang = 'es';
 
 	constructor(private translate: TranslateService) {
 		this.translate.setDefaultLang(this.currentLang);
